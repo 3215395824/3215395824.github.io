@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>浅谈fastboot | impdx-剑</title><meta name="keywords" content="Android"><meta name="author" content="忧郁的派大星-剑"><meta name="copyright" content="忧郁的派大星-剑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="友情链接: 浅谈recovery - https:&#x2F;&#x2F;impdx.vip&#x2F;2019&#x2F;04&#x2F;09&#x2F;%E6%B5%85%E8%B0%88recovery&#x2F; 欢迎各位来讨论，欢迎各位大神来纠错，给建议。客官觉得小的写的还行给个打赏呗 fastboot是什么 首先，fastboot是安卓刷机救砖的一种刷机模式。 fastboot俗称 引导模式 比recovery更底层的一种刷机模式。 多为厂商定制售后工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈fastboot">
+<meta property="og:url" content="https://www.impdx.vip/posts/6c68.html">
+<meta property="og:site_name" content="impdx-剑">
+<meta property="og:description" content="友情链接: 浅谈recovery - https:&#x2F;&#x2F;impdx.vip&#x2F;2019&#x2F;04&#x2F;09&#x2F;%E6%B5%85%E8%B0%88recovery&#x2F; 欢迎各位来讨论，欢迎各位大神来纠错，给建议。客官觉得小的写的还行给个打赏呗 fastboot是什么 首先，fastboot是安卓刷机救砖的一种刷机模式。 fastboot俗称 引导模式 比recovery更底层的一种刷机模式。 多为厂商定制售后工具">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2019-04-10T11:56:41.000Z">
+<meta property="article:modified_time" content="2021-05-03T03:01:30.150Z">
+<meta property="article:author" content="忧郁的派大星-剑">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/imgs/favicon.png"><link rel="canonical" href="https://www.impdx.vip/posts/6c68.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="http://data.zz.baidu.com/urls?site=www.impdx.vip&amp;token=d6Wl9dgjtu99hhYO"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#fff"/><link rel="apple-touch-icon" sizes="180x180" href="/imgs/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/imgs/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/imgs/pwa/16.png"/><link rel="mask-icon" href="/imgs/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?56e144199c27f8917b84914b8569062e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":360,"position":"top","messagePrev":"It has been","messageNext":"文章内容过于久远可能与现在实际情况不符，仅供参考。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-05-03 11:01:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/3215395824/hexo-css@v0.0.1/footer.css"><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="impdx-剑" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/imgs/avatar.png" onerror="onerror=null;src='/imgs/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot是什么"><span class="toc-number">1.</span> <span class="toc-text">fastboot是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot的用处"><span class="toc-number">2.</span> <span class="toc-text">fastboot的用处</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot的命令-仅供参考"><span class="toc-number">3.</span> <span class="toc-text">fastboot的命令 (仅供参考)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令汇总"><span class="toc-number">3.1.</span> <span class="toc-text">命令汇总</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写入分区步骤以及命令"><span class="toc-number">3.2.</span> <span class="toc-text">写入分区步骤以及命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#擦除分区命令"><span class="toc-number">3.3.</span> <span class="toc-text">擦除分区命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一般线刷操作流程"><span class="toc-number">3.4.</span> <span class="toc-text">一般线刷操作流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot-小秘密"><span class="toc-number">4.</span> <span class="toc-text">fastboot 小秘密</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot总结"><span class="toc-number">5.</span> <span class="toc-text">fastboot总结</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">impdx-剑</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">浅谈fastboot</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-10T11:56:41.000Z" title="发表于 2019-04-10 19:56:41">2019-04-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-03T03:01:30.150Z" title="更新于 2021-05-03 11:01:30">2021-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/android/">android</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>友情链接: 浅谈recovery - <a href="https://impdx.vip/2019/04/09/%E6%B5%85%E8%B0%88recovery/" target="_blank" rel="noopener external nofollow noreferrer">https://impdx.vip/2019/04/09/%E6%B5%85%E8%B0%88recovery/</a></p>
+<p>欢迎各位来讨论，欢迎各位大神来纠错，给建议。客官觉得小的写的还行给个打赏呗</p>
+<h1 id="fastboot是什么"><a href="#fastboot是什么" class="headerlink" title="fastboot是什么"></a>fastboot是什么</h1><blockquote>
+<p>首先，fastboot是安卓刷机救砖的一种刷机模式。</p>
+<p>fastboot俗称 <strong>引导模式</strong></p>
+<p>比recovery更底层的一种刷机模式。</p>
+<p>多为厂商定制售后工具刷机用</p>
+<p>底层开发人员调试用</p>
+</blockquote>
+<h1 id="fastboot的用处"><a href="#fastboot的用处" class="headerlink" title="fastboot的用处"></a>fastboot的用处</h1><ul>
+<li><p>fastboot可以刷入recovery</p>
+</li>
+<li><p>fastboot可以刷入系统</p>
+</li>
+<li><p>fastboot可以救砖</p>
+</li>
+<li><p>fastboot可以使用fastboot命令</p>
+<h1 id="fastboot的命令-仅供参考"><a href="#fastboot的命令-仅供参考" class="headerlink" title="fastboot的命令 (仅供参考)"></a>fastboot的命令 (仅供参考)</h1><h2 id="命令汇总"><a href="#命令汇总" class="headerlink" title="命令汇总"></a>命令汇总</h2></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash bootloader u-boot.bin</span><br><span class="line"></span><br><span class="line">fastboot flash kernel uImage</span><br><span class="line"></span><br><span class="line">fastboot flash system system.img</span><br><span class="line"></span><br><span class="line">fastboot flash userdata userdata.img</span><br><span class="line"></span><br><span class="line">fastboot flash ramdisk ramdisk-uboot.img</span><br><span class="line"></span><br><span class="line">fastboot erase cache</span><br><span class="line"></span><br><span class="line">fastboot flash &#123;partition&#125;</span><br></pre></td></tr></table></figure>
+
+<p>语法介绍：</p>
+<blockquote>
+<p>fastboot flash xxxx xxxx.img<br>{*.img}   例：fastboot flash boot boot.img</p>
+<p>fastboot flashall  </p>
+<p>注意：此命令会在当前目录中查找所有img文件，将这些img文件烧写到所有对应的分区中，并重新启动手机。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一次烧写boot，system，recovery分区：</span><br><span class="line"></span><br><span class="line">创建包含boot.img，system.img，recovery.img文件的zip包。</span><br><span class="line"></span><br><span class="line">执行：fastboot update &#123;*.zip&#125;</span><br></pre></td></tr></table></figure>
+<p>比较少用到的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash splash1 烧写开机第一屏</span><br><span class="line"></span><br><span class="line">fastboot reboot    不烧写flash情况下调试</span><br><span class="line"></span><br><span class="line">fastboot boot uImage 或者u-boot.bin  不烧写flash情况下调试</span><br><span class="line"></span><br><span class="line">fastboot getver:version    查看版本号</span><br></pre></td></tr></table></figure>
+<p>重启相关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot-bootloader   重启到到bootloader</span><br></pre></td></tr></table></figure>
+<p>清空分区相关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">fastboot erase &#123;partition&#125;   清空分区   例：fastboot erase boot</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fastboot erase boot   清除boot分区</span><br><span class="line"></span><br><span class="line">fastboot erase system   清除system分区</span><br><span class="line"></span><br><span class="line">fastboot erase data     清除data分区</span><br><span class="line"></span><br><span class="line">fastboot erase cache      清除cache分区</span><br><span class="line"></span><br><span class="line">上面的命令也可以简化成一条命令</span><br><span class="line"></span><br><span class="line">fastboot erase system -w  清除所有分区</span><br></pre></td></tr></table></figure>
+<p>获取基本信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fastboot getvar version:version-bootloader:version-baseband:product:serialno:secure</span><br><span class="line">  获取客户端(手机端)变量信息7 获取客户端(手机端)变量信息</span><br><span class="line"></span><br><span class="line">version 客户端支持的fastboot协议版本</span><br><span class="line"></span><br><span class="line">version-bootloader  Bootloader的版本号</span><br><span class="line"></span><br><span class="line">version-baseband    基带版本</span><br><span class="line"></span><br><span class="line">product             产品名称</span><br><span class="line"></span><br><span class="line">serialno             产品序列号</span><br><span class="line"></span><br><span class="line">secure              返回yes 表示在刷入时需要获取签名(签名需要厂商签名)</span><br></pre></td></tr></table></figure>
+<h2 id="写入分区步骤以及命令"><a href="#写入分区步骤以及命令" class="headerlink" title="写入分区步骤以及命令"></a>写入分区步骤以及命令</h2><blockquote>
+<p>adb devices——查看手机是否连接上</p>
+<p>adb reboot bootloader——将手机重启到Fastboot模式</p>
+<p>fastboot devices——查看Fastboot模式下连接的手机</p>
+</blockquote>
+<ul>
+<li>几种分区写入如下：(例如：system.img刷入的分区电脑上具体的路径)</li>
+</ul>
+<blockquote>
+<p>fastboot flash system system.img</p>
+<p>fastboot flash boot boot.img</p>
+<p>fastboot flash radio radio.img</p>
+<p>…</p>
+</blockquote>
+<ul>
+<li>fastboot reboot——Fastboot模式下重启手机</li>
+</ul>
+<h2 id="擦除分区命令"><a href="#擦除分区命令" class="headerlink" title="擦除分区命令"></a>擦除分区命令</h2><p>擦除分区前需要按照之前步骤走一遍，擦除会将该分区恢复到使用前状态</p>
+<blockquote>
+<p>fastboot erase system</p>
+<p>fastboot erase boot</p>
+<p>…</p>
+</blockquote>
+<h2 id="一般线刷操作流程"><a href="#一般线刷操作流程" class="headerlink" title="一般线刷操作流程"></a>一般线刷操作流程</h2><ul>
+<li><p>准备工作</p>
+<p>  首先需要准备好刷机包，可以是自己编译的，也可以是从别处拷贝的，但一定要确保刷机包适用于你的 Android 设备。然后解压刷机包，解压后我们可以得到 boot.img、recovery.img、system.img、bootloader 文件，正是这些文件构成了 Android 设备的系统。</p>
+<p>  让设备进入 fastboot 环境。有 2 种方法：</p>
+<pre><code>执行命令 adb  reboot  fastboot</code></pre><p>  或者</p>
+<pre><code>同时按住 增加音量 和 电源 键开机。具体看机型操作</code></pre></li>
+</ul>
+<ul>
+<li><p>命令执行流程</p>
+<p>  在设备进入到 fastboot 环境后，根据需求执行下面的命令进行刷机：</p>
+<p>  仅供参考，具体看机型以及ROM进行相关操作，请严格按照ROM作者教程来</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">fastboot  flashing  unlock    设备解锁，开始刷机</span><br><span class="line"></span><br><span class="line"> fastboot  flash  boot  boot.img    刷入 boot 分区。如果修改了 kernel 代码，则应该刷入此分区以生效</span><br><span class="line"></span><br><span class="line"> fastboot  flash  recovery  recovery.img  刷入 recovery 分区</span><br><span class="line"></span><br><span class="line"> fastboot  flash  system  system.img    刷入 system 分区。如果修改的代码会影响 out&#x2F;system&#x2F; 路径下生成的文件，则应该刷入此分区以生效</span><br><span class="line"></span><br><span class="line"> fastboot  flash  bootloader  bootloader     刷入 bootloader</span><br><span class="line"></span><br><span class="line"> fastboot  erase  frp   擦除 frp 分区，frp 即 Factory Reset Protection，用于防止用户信息在手机丢失后外泄</span><br><span class="line"></span><br><span class="line"> fastboot  flashing lock    设备上锁，刷机完毕（不是必须）</span><br><span class="line"></span><br><span class="line"> fastboot  continue    自动重启设备</span><br></pre></td></tr></table></figure>
+<h1 id="fastboot-小秘密"><a href="#fastboot-小秘密" class="headerlink" title="fastboot 小秘密"></a>fastboot 小秘密</h1><ul>
+<li><p>fastboot多为各大厂商的售后刷机工具所用(不包括有些厂商锁9008和mtk com)</p>
+</li>
+<li><p>fastboot一般用来救砖(指的是无法进入recovery和系统的情况下)</p>
+</li>
+<li><p>有些具有bl锁的机子fastboot可能无法刷入第三方镜像(img)</p>
+</li>
+<li><p>fastboot能进去你的机子99%都可以救回来</p>
+</li>
+<li><p>fastboot的权限仅次于9008/mtk com</p>
+</li>
+<li><p>fastboot无第三方。只有厂商定制。因为快速引导这个东西第三方也搞不出什么花样。。不像recovery这么多功能，他偏向于底层了。</p>
+</li>
+<li><p>个人认为fastboot比卡刷更安全，更可靠，也比recovery更稳定(有些recovery驱动不完美会导致有时候无法使用触屏等功能)</p>
+</li>
+<li><p>fastboot是个好东西</p>
+</li>
+<li><p>像奇兔，线刷宝大部分都是推送ROM到recovery中，用脚本进行卡刷。而不是用fastboot进行线刷。<strong><em>注意：是大部分</em></strong></p>
+</li>
+</ul>
+<h1 id="fastboot总结"><a href="#fastboot总结" class="headerlink" title="fastboot总结"></a>fastboot总结</h1><blockquote>
+<p>是比recovery更靠谱的底层刷机模式</p>
+<p>比recovery权限更高</p>
+<p>也可以调试用</p>
+</blockquote>
+<p>不明白可以dd回复哦。欢迎来blog里讨论 欢迎各位的建议或者是补充哦 <a href="https://impdx.vip" target="_blank" rel="noopener external nofollow noreferrer">https://impdx.vip</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">忧郁的派大星-剑</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.impdx.vip/posts/6c68.html">https://www.impdx.vip/posts/6c68.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.impdx.vip" target="_blank">impdx-剑</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/imgs/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/imgs/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/imgs/alipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/imgs/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/d951.html"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/imgs/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">hexo github pages 使用https</div></div></a></div><div class="next-post pull-right"><a href="/posts/a6a6.html"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/imgs/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">浅谈recovery</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/a6a6.html" title="浅谈recovery"><img class="cover" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-09</div><div class="title">浅谈recovery</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 忧郁的派大星-剑</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer">Butterfly</a></div><div class="footer_custom_text"><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://files.alexhchu.com/2020/06/11/4720138de5936.png"align="absmiddle" width="66px" height="31px" /></a><span>提供加速服务</span>|<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/imgs/icp.png"><span>浙ICP备20020615号</span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'CUpMVMmHzkXskaU1visamAMY-MdYXbMMI',
+      appKey: 'M9U4GB2yOP4Tq2wlfy7nY9PL',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/otherjs/music.js"></script><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label> ✨ 网站已更新最新版本，请点击刷新 👉 </label> <a href="javascript:void(0)" rel="external nofollow noreferrer" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>

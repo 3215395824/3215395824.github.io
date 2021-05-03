@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>linux gcc与c for win的不同</title>
+      <link href="/posts/5eaf.html"/>
+      <url>/posts/5eaf.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="gcc-要求"><a href="#gcc-要求" class="headerlink" title="gcc 要求"></a>gcc 要求</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> a, b;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a, &amp;b) != EOF)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a + b);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="int-main"><a href="#int-main" class="headerlink" title="int main:"></a>int main:</h3><h3 id="while-scanf"><a href="#while-scanf" class="headerlink" title="while(scanf()):"></a>while(scanf()):</h3><h3 id="return-0"><a href="#return-0" class="headerlink" title="return 0:"></a>return 0:</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>c语言可爱的运算符</title>
+      <link href="/posts/6399.html"/>
+      <url>/posts/6399.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="仅为个人笔记（随笔，后期可能会整理）"><a href="#仅为个人笔记（随笔，后期可能会整理）" class="headerlink" title="仅为个人笔记（随笔，后期可能会整理）"></a>仅为个人笔记（随笔，后期可能会整理）</h3><h2 id="算术运算符；"><a href="#算术运算符；" class="headerlink" title="算术运算符；"></a>算术运算符；</h2><ul><li><p>+-/* 我就不介绍了</p></li><li><p>%余数运算符，整除后的余数<br>B%A 将得到 3</p></li></ul><h1 id="i-与-i"><a href="#i-与-i" class="headerlink" title="i++与++i"></a>i++与++i</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">int</span> i,a;<span class="comment">//定义i，a俩个变量</span></span><br><span class="line"> i=<span class="number">5</span>;</span><br><span class="line"> a=<span class="number">0</span>; <span class="comment">//赋值俩个变量</span></span><br><span class="line"> a=i++; <span class="comment">//进行i++运算</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i); <span class="comment">// 打印输出i，这里的i无论是i++还是++i，都会+1</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a); <span class="comment">//表示整个i++式子的变量</span></span><br><span class="line"></span><br><span class="line"> i=<span class="number">5</span>;</span><br><span class="line"> a=<span class="number">0</span>;</span><br><span class="line"> a=++i;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line"></span><br><span class="line"> i=<span class="number">5</span>;</span><br><span class="line"> a=<span class="number">0</span>;</span><br><span class="line"> a=--i;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line"></span><br><span class="line"> i=<span class="number">5</span>;</span><br><span class="line"> a=<span class="number">0</span>;</span><br><span class="line"> a=i--;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>变量名++；    // 表示在本次使用变量后再自增；<br>++变量名;     // 表示在本次使用变量前自增；<br>变量名–；    // 表示在本次使用变量后再自增；<br>–变量名;     // 表示在本次使用变量前自减；</p></blockquote><ul><li><p>其实很简单，无论是i++还是++i，i这个变量一定会变，那么i++与++i有什么不同呢？</p></li><li><p>i++这个式子的值还是i，++i式子的值是i+1，不同的是式子的值</p></li></ul><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p><strong>字符串（字符数组）不能使用赋值运算符。</strong></p><table><thead><tr><th>运算符</th><th>描述</th></tr></thead><tbody><tr><td>=</td><td>A=B</td></tr><tr><td>+=</td><td>A+=B;A=A+B</td></tr><tr><td>-=</td><td>A-=B;A=A-B</td></tr><tr><td>*=</td><td>A<em>=B;A=A</em>B</td></tr><tr><td>/=</td><td>A/=B;A=A/B</td></tr><tr><td>%=</td><td>A%=B;A=A%B</td></tr></tbody></table><h2 id="sizeof运算符；"><a href="#sizeof运算符；" class="headerlink" title="sizeof运算符；"></a>sizeof运算符；</h2><ul><li><p>sizeof是C语言的关键字，它用来计算变量（或数据类型）在当前系统中占用内存的字节数。</p></li><li><p>sizeof不是函数，产生这样的疑问是因为sizeof的书写确实有点像函数，sizeof有两种写法：</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sizeof(数据类型);</span><br></pre></td></tr></table></figure><ul><li>俩种写法</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%d&quot;,sizeof(a)); &#x2F;&#x2F;输出a的占用字节数</span><br><span class="line">printf(&quot;%d&quot;,sizeof a ); &#x2F;&#x2F;对于变量也可以不加括号</span><br><span class="line">printf(&quot;%d&quot;,sizeof(int)); &#x2F;&#x2F;输出4，对于数据类型，必须加括号</span><br><span class="line"></span><br><span class="line">个人建议全部加括号</span><br></pre></td></tr></table></figure><h2 id="关系运算符；"><a href="#关系运算符；" class="headerlink" title="关系运算符；"></a>关系运算符；</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==  =</span><br><span class="line">&lt;=  ≤</span><br><span class="line">&gt;=  ≥</span><br><span class="line">&gt;   大于</span><br><span class="line">&lt;   小于</span><br><span class="line">这些不多说了</span><br></pre></td></tr></table></figure><ul><li>!= 表示不等于</li></ul><h2 id="逻辑运算符；"><a href="#逻辑运算符；" class="headerlink" title="逻辑运算符；"></a>逻辑运算符；</h2><ul><li>在 c语言中，三个逻辑运算符，与vb，python稍微不同，意思一样，写法不同</li></ul><h3 id="amp-amp-与"><a href="#amp-amp-与" class="headerlink" title="&amp;&amp; (与)"></a>&amp;&amp; (与)</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">-1</span> &amp;&amp; a&lt;<span class="number">0</span>)  <span class="comment">//表示只有满足俩个条件时才继续运行</span></span><br></pre></td></tr></table></figure><h3 id="（或）"><a href="#（或）" class="headerlink" title="||（或）"></a>||（或）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">-1</span> || a&lt;<span class="number">0</span>)  <span class="comment">//表示满足其中一个条件时才继续运行</span></span><br></pre></td></tr></table></figure><h3 id="（非）"><a href="#（非）" class="headerlink" title="!（非）"></a>!（非）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(a&gt;<span class="number">-1</span>))  <span class="comment">//表示不满足此条件时运行</span></span><br></pre></td></tr></table></figure><h2 id="位运算符。"><a href="#位运算符。" class="headerlink" title="位运算符。"></a>位运算符。</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何使用多家cdn优化博客(hexo 又拍云主线路)</title>
+      <link href="/posts/e3c9.html"/>
+      <url>/posts/e3c9.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://www.upyun.com/tech/article/551/%E6%9C%89%E5%A5%96%E5%BE%81%E6%96%87%EF%BD%9C%E5%8F%88%E6%8B%8D%E4%BA%91%E5%8E%9F%E5%88%9B%E6%8A%80%E6%9C%AF%E5%BE%81%E6%96%87%E5%A4%A7%E8%B5%9B%EF%BC%8CFILCO%E9%94%AE%E7%9B%98%E3%80%81%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF%E3%80%81%E4%BB%A3%E9%87%91%E5%88%B8%E7%AD%89%E4%BD%A0%E6%9D%A5%E6%8B%BF.html" target="_blank" rel="noopener external nofollow noreferrer">本文参加又拍云原创技术征文活动</a></p><p><a href="https://www.upyun.com/tech/article/562/%E8%8E%B7%E5%A5%96%E5%90%8D%E5%8D%95%E5%85%AC%E5%B8%83%EF%BD%9C%E5%8F%88%E6%8B%8D%E4%BA%91%E5%8E%9F%E5%88%9B%E6%8A%80%E6%9C%AF%E5%BE%81%E6%96%87%E6%B4%BB%E5%8A%A8%E5%9C%86%E6%BB%A1%E8%90%BD%E5%B9%95.html" target="_blank" rel="noopener external nofollow noreferrer">本文已获得又拍云征文三等奖</a></p><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><ul><li>我的站点原本挂 coding和github的 peages 发现github访问速度不理想</li><li>coding又不稳，经常崩</li></ul><p>在了解了cdn后，6月份<strong>备案</strong>了。开始白嫖之路</p><h1 id="各大白嫖cdn的介绍"><a href="#各大白嫖cdn的介绍" class="headerlink" title="各大白嫖cdn的介绍"></a>各大白嫖cdn的介绍</h1><h3 id="以下按个人使用感受排名"><a href="#以下按个人使用感受排名" class="headerlink" title="以下按个人使用感受排名"></a>以下按个人使用感受排名</h3><ul><li>又拍云<ul><li>实测各方面均不错</li><li>缺点是流量少，但一般也用不完（加入又拍云联盟每个月流量+15g，很棒）</li></ul></li><li>百度云加速<ul><li>流量很多，每天10g</li><li>缺点是回源设置不如又拍云，而且经常报5xx错误</li><li>而且有概率反向加速</li></ul></li><li>奇安信加速<ul><li>奇安信流量一年1t，没错，按年来算。。</li><li>速度，只有一个节点，，一个人被打，全部受影响。日常不稳，经常404</li></ul></li></ul><h1 id="目前方案"><a href="#目前方案" class="headerlink" title="目前方案"></a>目前方案</h1><p>使用dnspod进行分线路解析</p><ul><li>默认线路：又拍云</li><li>联通线路：百度云加速</li><li>电信线路：奇安信</li><li>境外：github</li><li>小运营商：又拍云</li></ul><p>为何这样分配？看下问</p><h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>第一次做流程图，如有可以改进的地方可以评论区留言<br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/4df2e8f9ea0bf.png" alt="dnspod分线路解析cdn.png"></p><h3 id="线路分配原因"><a href="#线路分配原因" class="headerlink" title="线路分配原因"></a>线路分配原因</h3><ul><li><p>又拍云 国内节点最多，最稳。所以用来应对蛋疼的移动线路</p></li><li><p>百度云节点其次，用来应付联通</p></li><li><p>奇安信就一个节点，，，当然是电信大头</p></li><li><p>境外路线直接走的github没套cdn</p></li><li><p>小运营商其实不用管，默认线路是又拍云，除了以上线路其他全走又拍云。</p><p>实测又拍云最稳，百度云经常报5xx错误，奇安信就算炸了也没多少人管。而且奇安信多访问几次直接算cc。</p><h1 id="相应操作"><a href="#相应操作" class="headerlink" title="相应操作"></a>相应操作</h1><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3></li><li><p><strong>建议加入又拍云联盟（免费每个月15g储存和10gcdn流量）</strong></p></li><li><p>只讲关键的操作步骤</p></li><li><p>域名需要备案。关于怎么备案hexo（coding&amp;github），后期高考完我会出教程</p></li><li><p>各大cdn都需要<strong>实名</strong>，其中需要手持，身份证各正反面。</p></li><li><p>奇安信的实名审核就可以使用，百度审核中不能使用，又拍云审核中可以使用</p></li><li><p>添加cname验证cdn的时候，注意线路一定要默认才可以验证。验证完可以改线路，不影响使用。</p><h2 id="前置dnspod操作"><a href="#前置dnspod操作" class="headerlink" title="前置dnspod操作"></a>前置dnspod操作</h2><h3 id="进入控制台"><a href="#进入控制台" class="headerlink" title="进入控制台"></a>进入控制台</h3><p>设置两条子域名，分别指向github和coding的地址。<br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/7ab0bfd1b3f56.png" alt="N74PDPJA549A_7Y0X___CQX.png"></p></li></ul><h2 id="又拍云操作"><a href="#又拍云操作" class="headerlink" title="又拍云操作"></a>又拍云操作</h2><h3 id="1-进入又拍云控制台"><a href="#1-进入又拍云控制台" class="headerlink" title="1.进入又拍云控制台"></a>1.进入又拍云控制台</h3><h3 id="2-选择cdn服务，点创建"><a href="#2-选择cdn服务，点创建" class="headerlink" title="2.选择cdn服务，点创建"></a>2.选择cdn服务，点创建</h3><p>![O_4_7~<strong>4_Y88R_M_@</strong>`PV.png](<a href="https://files.alexhchu.com/2020/06/17/d304dc3943d86.png" target="_blank" rel="noopener external nofollow noreferrer">https://files.alexhchu.com/2020/06/17/d304dc3943d86.png</a>)</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/c52bb366dd77f.png" alt="_S2C3~W_D__G_`~6`UEL1_T.png"></p><h3 id="3-进入配置，配置cname"><a href="#3-进入配置，配置cname" class="headerlink" title="3.进入配置，配置cname"></a>3.进入配置，配置cname</h3><ul><li>注意线路一定要默认</li></ul><p>![JTI6`ZO<del>NNDQ__QUE</del>RL6A0.png](<a href="https://files.alexhchu.com/2020/06/17/06e72265a9cbb.png" target="_blank" rel="noopener external nofollow noreferrer">https://files.alexhchu.com/2020/06/17/06e72265a9cbb.png</a>)<br> 至此简单的配置已经完成了</p><h2 id="又拍云优化系列"><a href="#又拍云优化系列" class="headerlink" title="又拍云优化系列"></a>又拍云优化系列</h2><h3 id="缓存控制"><a href="#缓存控制" class="headerlink" title="缓存控制"></a>缓存控制</h3><ul><li><p>开启分段缓存</p></li><li><p>缓存配置，我配置了缓存全站1小时。（因博客需要经常更新文章）</p><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3></li><li><p>开启页面压缩</p></li><li><p>开启重定向跟随</p><h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3></li><li><p>开启TLS 1.3</p></li><li><p>最低 TLS 版本 选择1.0，因为兼容所以选择</p></li><li><p>HTTP/2 开启</p><h3 id="访问控制（重要）"><a href="#访问控制（重要）" class="headerlink" title="访问控制（重要）"></a>访问控制（重要）</h3></li><li><p>ip访问限制</p><ul><li>一分钟超过300次直接禁止24小时ip访问（由于全是静态，有更合理的设置可以评论改进）</li></ul></li><li><p>cc防护 开启</p><ul><li>url匹配规则 /*</li><li>访问频率300 次/分</li><li>智能防护 无白名单</li></ul></li><li><p>waf防护 开启</p><p>图片处理和成本控制以及边缘规则我并没有开，因为是静态站，也不会放啥mp4.</p><h2 id="百度云操作"><a href="#百度云操作" class="headerlink" title="百度云操作"></a>百度云操作</h2><ul><li>1.添加网站（选择cname）</li><li>2.验证dns，cname记录等。<strong>注意：线路要为默认</strong></li><li>3.在子域名解析加入 例子：<br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/20ea03e5eb8e3.png" alt="_OR_86__H3D0~MBP5RWV0MA.png"><br>至此简单配置教程结束<h2 id="奇安信操作"><a href="#奇安信操作" class="headerlink" title="奇安信操作"></a>奇安信操作</h2><h3 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h3></li></ul></li><li><p>奇安信验证时间特别特别长，接入网站时，有时候会白。据工作人员了解每新增一个域名需要手动去添加，因而只有工作日才可以添加。</p></li><li><p>奇安信网站卫士的js/css/html缓存，千万别开。不然慢死你。</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/9f0364a37cf3f.png" alt="_FA9H9A80H_TOQI63@N_8RX.png"></p><h3 id="进入控制台-1"><a href="#进入控制台-1" class="headerlink" title="进入控制台"></a>进入控制台</h3></li><li><p>就这样嗯嗯嗯，那样嗯嗯嗯，就好了</p></li><li><p>绑定域名还是cname接入，上dnspod默认线路，等10分钟左右生效（ttl：600）。然后点小刷新图标刷新。</p></li><li><p>接入还是老样子，域名解析www，cname解析到如：github.impdx.vip（第一步设置的github地址）。</p></li><li><p>开启云防护。</p></li><li><p>结束</p><h2 id="dnspod设置各线路解析cname"><a href="#dnspod设置各线路解析cname" class="headerlink" title="dnspod设置各线路解析cname"></a>dnspod设置各线路解析cname</h2><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/35404a185fa8c.png" alt="D@_YMR2__6AGZ5H_A2__U6H.png"></p><h3 id="设置d监控"><a href="#设置d监控" class="headerlink" title="设置d监控"></a>设置d监控</h3><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/06/17/dc49e1b5cb4bf.png" alt="_R_G6IQSJ_WSB3_HW3_9VBE.png"></p></li></ul><h1 id="至此"><a href="#至此" class="headerlink" title="至此"></a>至此</h1><p>关键步骤均已完成</p><p>我的博客即将同步至腾讯云+社区，邀请大家一同入驻：<a href="https://cloud.tencent.com/developer/support-plan?invite_code=3ltx2dbwpkcgc" target="_blank" rel="noopener external nofollow noreferrer">https://cloud.tencent.com/developer/support-plan?invite_code=3ltx2dbwpkcgc</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> cdn </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> cdn </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2020高职提前招生分析（计算机类）</title>
+      <link href="/posts/354b.html"/>
+      <url>/posts/354b.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><ul><li>数据来自浙江省考试院官网 <a href="https://www.zjzs.net/moban/index/000000007080bb400171f75f902d08b0.html" target="_blank" rel="noopener external nofollow noreferrer">点击此处进入</a></li><li>以下学校不分排名，只作参考</li><li>数据有误可在评论区留言</li><li>没写学费是因为我没有在相关网页中找到</li></ul><h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul><li>一旦报名 被录取  不可参加高考</li><li>报名 未录取，可参加高考</li><li>报名，多校录取，选择学校，不可高考<h2 id="仅作参考"><a href="#仅作参考" class="headerlink" title="仅作参考"></a>仅作参考</h2><table width="975" border="1" cellspacing="1" cellpadding="1"><tr>  <th width="215">学校</th>  <th width="206">专业</th>  <th width="76" align="center">人数</th>  <th width="76" align="center">学费</th>  <th width="197">地点</th>  <th width="172">是否民办</th></tr><tr>  <td><a href="https://zhaosheng.nbpt.edu.cn/a/202059/847.shtml" target="_blank" rel="noopener external nofollow noreferrer">宁波职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/数字媒体应用技术/22245510?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">数字媒体应用技术</a></td>  <td align="center">10</td>  <td align="center">6600/年</td>  <td>宁波经济技术开发区</td>  <td>否</td></tr><tr>  <td><a href="http://zsw.zjjy.net/a/2020511/648.shtml" target="_blank" rel="noopener external nofollow noreferrer">浙江建设职业技术学院</a></td>  <td><a href="http://zsw.zjjy.net/danye/72.shtml" target="_blank" rel="noopener external nofollow noreferrer">城市信息化管理（智慧城管）</a></td>  <td align="center">20</td>  <td align="center">6600/年</td>  <td>杭州校区地址为杭州市萧山高教园区、上虞校区地址为绍兴市上虞区。</td>  <td>否</td></tr><tr>  <td><a href="http://zs.zjdfc.com/Art/Art_11/Art_11_10249.aspx" target="_blank" rel="noopener external nofollow noreferrer">浙江东方职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E4%B8%93%E4%B8%9A/11043689?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机信息管理 </a></td>  <td align="center">25</td>  <td align="center">/年</td>  <td>金海校区（温州市经济技术开发区金海三道433号）</td>  <td bgcolor="#999999">是</td></tr><tr>  <td rowspan="2"><a href="http://tqzs.zjff.edu.cn/Pc/Public/Notice/view.html?id=90b3a1a1-962c-442d-969c-1ef42697e0a7&amp;type=notice&amp;_vid=zl0101" target="_blank" rel="noopener external nofollow noreferrer">浙江纺织服装职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E8%89%BA%E6%9C%AF/4567991?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">数字媒体艺术设计</a></td>  <td align="center">10</td>  <td align="center">9000/年</td>  <td rowspan="2">浙江省宁波市江北区风华路495号</td>  <td rowspan="2">否</td></tr><tr>  <td height="39"><a href="https://baike.baidu.com/item/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/11030579?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">移动应用开发 </a></td>  <td align="center">10</td>  <td align="center">6600/年</td></tr><tr>  <td rowspan="6"><a href="http://zs.zjczxy.cn/ggl/2271" target="_blank" rel="noopener external nofollow noreferrer">浙江长征职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/%E5%9F%8E%E5%B8%82%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/10914235?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">城市轨道交通运营管理</a></td>  <td align="center">10</td>  <td rowspan="6" align="center">/年</td>  <td rowspan="6">浙江省杭州市西湖区小和山高教园区留和路525号</td>  <td rowspan="6" bgcolor="#999999">是</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF/15968?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机应用技术</a></td>  <td align="center">40</td></tr><tr>  <td><a href="https://baike.baidu.com/item/数字媒体应用技术/22245510?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">数字媒体应用技术</a></td>  <td align="center">10</td></tr><tr>  <td><a href="https://baike.baidu.com/item/电子商务/98106?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">电子商务</a></td>  <td align="center">10</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB%E4%B8%8E%E4%BC%A0%E6%92%AD%E4%B8%93%E4%B8%9A/24455345?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">网络新闻与传播 </a></td>  <td align="center">10</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E8%BF%90%E5%8A%A8%E4%B8%8E%E7%AE%A1%E7%90%86/24496452?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">电子竞技运动与管理</a></td>  <td align="center">20</td></tr><tr>  <td><a href="http://www.zjbc.edu.cn/zs/content/1055.html" target="_blank" rel="noopener external nofollow noreferrer">浙江商业职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/电子商务/98106?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">电子商务</a></td>  <td align="center">20</td>  <td align="center">6900/年</td>  <td>杭州市滨江区滨文路470号</td>  <td>否</td></tr><tr>  <td><a href="https://zsw.sxvtc.com/a/202059/348.shtml" target="_blank" rel="noopener external nofollow noreferrer">绍兴职业技术学院 </a></td>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF/15968?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机应用技术</a></td>  <td align="center">45</td>  <td align="center">12000/年</td>  <td>绍兴市越城区山阴路526号</td>  <td bgcolor="#999999">是</td></tr><tr>  <td rowspan="4"><a href="http://tqzs.guangshaxy.com/danye/4.shtml" target="_blank" rel="noopener external nofollow noreferrer">浙江广厦建设职业技术学院 （本科院校 但计算机招生是专科）</a></td>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF/15968?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机应用技术</a></td>  <td align="center">15</td>  <td rowspan="4" align="center">13000/年</td>  <td rowspan="4">浙江省东阳市广福东街1号</td>  <td rowspan="4" bgcolor="#999999">是</td></tr><tr>  <td> <a href="https://baike.baidu.com/item/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/23453226?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">大数据技术与应用</a></td>  <td align="center">5</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A/24458872?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">虚拟现实应用技术</a></td>  <td align="center">15</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E5%8A%A8%E6%BC%AB%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%B6%E4%BD%9C/10964133?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">动漫制作技术 </a></td>  <td align="center">10</td></tr><tr>  <td><a href="https://www.tzvcst.edu.cn/zs/detail/126058" target="_blank" rel="noopener external nofollow noreferrer">台州科技职业学院 </a></td>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF/15968?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机应用技术</a></td>  <td align="center">15</td>  <td align="center">6600/年</td>  <td>台州市黄岩区嘉木路288号</td>  <td>否</td></tr><tr>  <td><a href="http://zs.wzvcst.cn/a/202059/355.shtml" target="_blank" rel="noopener external nofollow noreferrer">温州科技职业学院 </a></td>  <td><a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/1194?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">计算机网络技术</a></td>  <td align="center">20</td>  <td align="center">6600/年</td>  <td>温州市六虹桥路1000号</td>  <td>否</td></tr><tr>  <td><a href="https://tqzshd.eduw.cn/a/2020510/56.shtml" target="_blank" rel="noopener external nofollow noreferrer">浙江横店影视职业学院</a></td>  <td><a href="https://baike.baidu.com/item/%E5%BD%B1%E8%A7%86%E5%90%8E%E6%9C%9F%E5%88%B6%E4%BD%9C/10370688?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">广播影视节目制作（影视后期制作）</a></td>  <td align="center">21</td>  <td align="center">/年</td>  <td>浙江省东阳市</td>  <td bgcolor="#999999">是</td></tr><tr>  <td rowspan="2"><a href="http://zs.zjist.cn/Art/Art_2/Art_2_312.aspx" target="_blank" rel="noopener external nofollow noreferrer">浙江安防职业技术学院</a></td>  <td><a href="https://baike.baidu.com/item/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/23453226?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">大数据技术与应用</a></td>  <td align="center">10</td>  <td rowspan="2" align="center">6600/年</td>  <td rowspan="2"><p>本部校区位于温州市瓯海区郭溪街道</p>  <p>滨海校区</p></td>  <td rowspan="2" bgcolor="#FFFFFF">否</td></tr><tr>  <td><a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/8962028?fr=aladdin" target="_blank" rel="noopener external nofollow noreferrer">安全技术与管理 </a></td>  <td align="center">5</td></tr></table></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 高职考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高职考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows server 2019 断电无法启动修复</title>
+      <link href="/posts/b5d.html"/>
+      <url>/posts/b5d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="环境，问题发生"><a href="#环境，问题发生" class="headerlink" title="环境，问题发生"></a>环境，问题发生</h1><ul><li>本地有台win server 2019</li><li>突然停电，没有ups，停电后又来电5s又断电</li><li>造成winserver启动转圈圈卡住重新启动</li></ul><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><ul><li>尝试使用微pe中的dism++镜像修复，引导修复。显示镜像无问题</li><li>制作可引导镜像刻录在u盘中进行修复</li></ul><p>检查磁盘并修复</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkdsk C: &#x2F;R &#x2F;f</span><br></pre></td></tr></table></figure><p>修复引导</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Bootrec.exe &#x2F;fixmbr</span><br><span class="line">Bootrec &#x2F;fixboot</span><br><span class="line">bootrec &#x2F;RebuildBcd</span><br><span class="line">bcdboot c:\windows &#x2F;s c:</span><br></pre></td></tr></table></figure><p>检查系统文件受损</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sfc &#x2F;SCANNOW</span><br></pre></td></tr></table></figure><h1 id="执行以上步骤，完美开机"><a href="#执行以上步骤，完美开机" class="headerlink" title="执行以上步骤，完美开机"></a>执行以上步骤，完美开机</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> winserver </tag>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高职考计算题笔记汇总</title>
+      <link href="/posts/4cf3.html"/>
+      <url>/posts/4cf3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="存储单元计算"><a href="#存储单元计算" class="headerlink" title="存储单元计算"></a>存储单元计算</h1><ul><li><p>公式：储存容量=末地址 — 首地址 + 1</p><p>​            末地址=首地址+储存容量 — 1</p><p>​            首地址=末地址—储存容量 +1</p></li></ul><p>例子：</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/03/20/c01c6fab1f7e6.png" alt="_4_6003~_N_EI_5~ILK_Q2H.png"></p><h1 id="数值大小比较和ASCII码"><a href="#数值大小比较和ASCII码" class="headerlink" title="数值大小比较和ASCII码"></a>数值大小比较和ASCII码</h1><h2 id="进制相关"><a href="#进制相关" class="headerlink" title="进制相关"></a>进制相关</h2><ul><li>考纲 （二进制，十进制，八进制，十六进制）仅限整数</li><li>概念<ul><li>数制：也称计数制，是指计数的方法，采用一组计数符号的组合来表示任何一个方法。（比如10进制，十六进制）<ul><li>数码：每种数制中都有固定的基本符号。（下图的基本符号）</li><li>基数：数码的个数称为基数，比如10进制有10个数码，基数为10。二进制有2个数码，基数为2。</li><li>位权：每一个数位上的数码所表示的数值大小，等于该数码自身的值乘以该数位所代表的位权。 就是下图中的i。</li></ul></li></ul></li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/03/25/c84916899286a.png" alt="中职1-1.png"></p><h2 id="ASCII码"><a href="#ASCII码" class="headerlink" title="ASCII码"></a>ASCII码</h2><ul><li><p>概念</p><ul><li><p>美国信息标准交换代码，128种符号，用7位二进制数来编码表示。（ISO-646）包含10个数字、52个英文大小写字幕、33个标点符号及运算符、33个控制码。</p></li><li><p>ascii码英文大小写相差32</p></li></ul></li></ul><div class="note info"><ul><li>牢记<br>0 – 48<br>A – 65<br>a – 97</li></ul></div><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/03/25/c5c7e8156f9f7.png" alt="ascii.png"></p><h1 id="原码反码补码换算"><a href="#原码反码补码换算" class="headerlink" title="原码反码补码换算"></a>原码反码补码换算</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul><li>为什么产生：原码反码补码的产生过程就是为了解决计算机做减法和引入符号位的问题</li><li>概念<ul><li>真值数：带符号的数字</li><li>机器数：把正负符号转换成数字的数，为二进制</li><li>原码：记作[X]原</li></ul></li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul><li>正数<ul><li>原码=反码=补码</li></ul></li><li>负数<ul><li>反码=原码取反</li><li>补码=反码+1</li></ul></li><li>特殊值<ul><li>0,1,127 直接套公式算。就行了</li></ul></li></ul><h2 id="特殊"><a href="#特殊" class="headerlink" title="特殊"></a>特殊</h2><ul><li><p>当机器数为8位时，真值的取值范围 -127 ~ +127</p></li><li><p>注意有个奇葩的玩意-128。只有<strong>补码</strong>，没有原码补码。</p></li></ul><h1 id="奇偶检验码"><a href="#奇偶检验码" class="headerlink" title="奇偶检验码"></a>奇偶检验码</h1><p>核心：看1的个数，奇检验1的个数为奇数，偶检验，1的个数为偶数，在最高位加1或者0</p><ul><li>总共8位，7位数据，1位检验。位数不够时在最高位+0变成7位。（重点）</li><li>只具有检验能力，发现了也不能纠错。无纠错功能。（判断题经常出现）</li><li>一个字节一个检验位，一个汉字2字节，所以一个汉字2个检验位 （高考题）</li><li>多位数据错误检测不出，检测不到错误发生在哪一位 （了解一下）</li><li>应用于低速数据通信系统中。（了解一下）</li><li>异步偶检验，同步奇检验 （了解一下）</li></ul><h1 id="汉字编码（区位码-国标码-机内码等）"><a href="#汉字编码（区位码-国标码-机内码等）" class="headerlink" title="汉字编码（区位码/国标码/机内码等）"></a>汉字编码（区位码/国标码/机内码等）</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><h3 id="1-汉字输入码"><a href="#1-汉字输入码" class="headerlink" title="1.汉字输入码"></a>1.汉字输入码</h3><ul><li><p>外部码 外码 （详见书本P25）</p><h3 id="2-汉字内码"><a href="#2-汉字内码" class="headerlink" title="2.汉字内码"></a>2.汉字内码</h3><ul><li><p>汉字信息交换码</p><ul><li>GB2312-80国标将汉字编码分为94区与94位。</li><li>共收集了7445个图形字符，其中一班服好、数字拉丁字母、希腊字母、、汉字拼音等682个</li><li>一级汉字3755个，二级汉字3008个</li></ul></li><li><p>区位码，即国标码演化而来。</p><ul><li><blockquote><p>16-55 　(常用字) 　　　　一级字符 　　　按汉语拼音顺序，同音字按笔画排列<br>  56-87 （非常用字） 　　　二级字符  　　 按部首笔画顺序排列</p></blockquote></li><li><strong>区位码为10进制</strong></li></ul></li><li><p>机内码 指汉字信息处理系统内部标识汉字的编码。由国标码演化而来，把国标码俩个字节最高位都置1.</p><h3 id="3-汉字字形码"><a href="#3-汉字字形码" class="headerlink" title="3.汉字字形码"></a>3.汉字字形码</h3></li><li><p>在点阵字模中 黑为1，白为0，一共8位</p></li><li><p>16x16/8</p><h3 id="4-汉字地址码-："><a href="#4-汉字地址码-：" class="headerlink" title="4.汉字地址码 ："></a>4.汉字地址码 ：</h3></li><li><p>概念：存放汉字字模信息在汉字库中存放逻辑地址的编码</p></li><li><p>硬字库</p><ul><li>不占用内存，安装在卡上，插在微机的扩充槽里。</li><li>EPROM</li><li>MAKSROM</li></ul></li><li><p>软字库</p><ul><li>存放在磁盘上，使用时将汉字调入内存，故占用相当部分的内存。<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2></li></ul></li></ul></li><li><p>UCS 通用编码字符集 规定了全世界代书面语言文字使用的标准编码。USC中表意文字中日韩统一汉字编码（CJK）。台湾香港使用BIG5.windows下一般为GBK</p></li></ul><ol><li>GB2312-80称为国标码</li><li>Big5又称大五码，香港台湾使用，即繁体字编码</li><li>GBK是GB2312的拓展，向上兼容，包含GB2312及GBK中繁体字编码</li></ol><h2 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h2><p>汉字机内码=汉字国标码+8080H<br>汉字国标码=汉字区位码（十六进制）+2020H<br>汉字机内码=汉字区位码（十六进制）+A0A0H</p><ul><li>注意： 区位码默认十进制，需转换十六进制进行运算</li></ul><ul><li>16<em>16的点阵显示需要的容量 16\</em>16/8</li><li>32X32点阵存放 二级汉字库，占用空间 3008 X32X32/8 /1024。在上面的基础上乘以3755（一级汉字）或者3008（二级汉字）再除以1024就是kb。<h1 id="图像音频文件大小"><a href="#图像音频文件大小" class="headerlink" title="图像音频文件大小"></a>图像音频文件大小</h1></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 高考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高职考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>asrd 16人补丁</title>
+      <link href="/posts/c6ac.html"/>
+      <url>/posts/c6ac.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="运行测试图"><a href="#运行测试图" class="headerlink" title="运行测试图"></a>运行测试图</h1><p><img src= "/img/loading.gif" data-lazy-src="https://r.photo.store.qq.com/psb?/V13iVwZo2obvUj/*7P*Ubd2.8OqGze07k80S51H0TLtyl6Tg27l817xzJg!/r/dFQBAAAAAAAAnull/_yake_qzoneimgout.png" alt="asrdtest.png"></p><h1 id="补丁使用方法"><a href="#补丁使用方法" class="headerlink" title="补丁使用方法"></a>补丁使用方法</h1><p>下载解压到游戏目录，注意对应文件和目录位置（不会覆盖任何游戏文件）<br><img src= "/img/loading.gif" data-lazy-src="https://r.photo.store.qq.com/psb?/V13iVwZo2obvUj/Rq.G4NVZN.UlFSzjvVNMFFEaVUmcdbkyPGbCre9j5Uw!/r/dLYAAAAAAAAAnull/_yake_qzoneimgout.png" alt="asrdtest.png"></p><p>运行 【asrd_yake_16.exe】 就是 运行16人客户端，可以将这个程序发送桌面快捷方式。</p><p>如果通过steam启动as：rd 那么运行是原版客户端。</p><h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><p>asrd_yake_16.exe 为16人客户端</p><p>srcds_16.exe  为16人专用服务端 （开服务器玩家才需要）</p><h1 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h1><div class="note warning"><h4 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h4><p>1， 16人客户端只能进16人服务器/主机 。 原版客户端只能进原版客户端/主机。 不会自动识别。</p><p>2， 本版本为先行测试版，bug慢慢修复。</p></div><h1 id="已知bug"><a href="#已知bug" class="headerlink" title="已知bug"></a>已知bug</h1><div class="note danger"><h4 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h4><p>1，只有前8个角色的装备会保留,后8个角色每次回到大厅会恢复默认装备(调试4天,暂时没找到哪里问题)</p><p>2， 如果选了超过8个角色的情况，按F9投票有一定概率会客户端奔溃。(谁按谁奔溃,不影响其他人)</p></div><p>建议换地图 使用控制台命令 换地图.</p><p>asw_vote_chooser map<br>可以将这个命令绑定快捷键,比如F10</p><p>bind F10 “asw_vote_chooser map;”</p><p>这些bug可能都是数组越界引起的，源代码太复杂,而且我又太懂擅长vc++。。作者还在慢慢修复</p><h1 id="开服务器说明"><a href="#开服务器说明" class="headerlink" title="开服务器说明"></a>开服务器说明</h1><div class="note info no-icon"><h4 id="No-icon-note"><a href="#No-icon-note" class="headerlink" title="No icon note"></a>No icon note</h4><p> 只需要将原来bat文件里面内容 srcds.exe 替换 –&gt; srcds_16.exe 即可。</p><p>  服务器带的动的话， 你可以一个bat运行原版/一个bat运行16人版。</p></div><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><div class="note success"><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>更新时间_2019/10/02</p><p>链接: <a href="https://pan.baidu.com/s/1bhtGMCC2Km_9602KKfFuuA" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1bhtGMCC2Km_9602KKfFuuA</a></p><p>提取码: wujd</p></div><div class="note info no-icon"><h4 id="原作者"><a href="#原作者" class="headerlink" title="原作者"></a>原作者</h4><p>原文作者: Y.A.K.E</p><p>原文链接: <a href="https://www.yge.me/detail/show/id/45.html" target="_blank" rel="noopener external nofollow noreferrer">https://www.yge.me/detail/show/id/45.html</a></p><p>许可协议: 知识共享署名-非商业性使用 4.0 国际许可协议</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASRD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>asrd服务器配置（进阶）</title>
+      <link href="/posts/fd31.html"/>
+      <url>/posts/fd31.html</url>
+      
+        <content type="html"><![CDATA[<p>linux 请看 <a href="https://github.com/mithrand0/reactive-drop-docker" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/mithrand0/reactive-drop-docker</a></p><h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><p>前言：asrd服务器配置文件可以大概分为AutoGavy的配置，自爆砖家的配置，南方的配置。国外的配置文件这里不涉及。</p><div class="note default"><h4 id="配置文件一键安装"><a href="#配置文件一键安装" class="headerlink" title="配置文件一键安装"></a>配置文件一键安装</h4><p>我把所有的配置文件都整理好了，可以下载直接覆盖。</p><ul><li>链接：<a href="https://pan.baidu.com/s/1S9VPn3cRqjmcw-BPIIUgKw" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1S9VPn3cRqjmcw-BPIIUgKw</a><br>提取码：7ce9</li></ul><p><strong>如果使用上述配置文件，直接覆盖就行不用修改</strong></p><p>建议根据服务器调整。</p><ul><li>1M学生机选自爆砖家的配置：5M可选AutoGavy的配置：更高配置可选南方配置/或者自己改。</li></ul></div><h2 id="AutoGavy的配置"><a href="#AutoGavy的配置" class="headerlink" title="AutoGavy的配置"></a>AutoGavy的配置</h2><p>原帖 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1927158239" target="_blank" rel="noopener external nofollow noreferrer">https://steamcommunity.com/sharedfiles/filedetails/?id=1927158239</a><br>原HZ服务配置</p><ul><li>服务器配置要求</li></ul><p>至少拥有5m宽带，1核2G。宽带越高越好，但大陆宽带普遍贵.</p><ul><li>cfg文件配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hostname &quot;[xigua] HZ-1&quot;&#x2F;&#x2F; 服务器名称</span><br><span class="line">asw_marine_death_cam_slowdown 0&#x2F;&#x2F; 关闭死亡慢镜头</span><br><span class="line">rd_override_allow_rotate_camera 1&#x2F;&#x2F; 允许旋转镜头</span><br><span class="line">rd_ready_mark_override 1&#x2F;&#x2F; 为加入的玩家设置准备</span><br></pre></td></tr></table></figure></li><li>autoexec.cfg<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sv_alternateticks 0</span><br><span class="line">sv_minrate 30000&#x2F;&#x2F; 标记 如只开一个服务器 100000 带宽较少默认</span><br><span class="line">sv_maxrate 400000&#x2F;&#x2F; 标记 如只开一个服务器 600000带宽较少默认</span><br><span class="line">sv_minupdaterate 0</span><br><span class="line">sv_maxupdaterate 60</span><br><span class="line">sv_mincmdrate 0</span><br><span class="line">sv_maxcmdrate 60</span><br><span class="line">net_maxfilesize 1</span><br><span class="line">net_splitrate 2</span><br><span class="line">net_splitpacket_maxrate 40000&#x2F;&#x2F; 标记 如只开一个服务器60000</span><br><span class="line">rd_adjust_sv_maxrate 0</span><br><span class="line">sv_client_cmdrate_difference 20</span><br><span class="line">sv_client_max_interp_ratio 8</span><br><span class="line">sv_client_min_interp_ratio 0</span><br><span class="line">sv_client_predict 1</span><br><span class="line">asw_max_saves 600</span><br><span class="line">sv_autosave 0</span><br><span class="line">snd_updateaudiocache</span><br></pre></td></tr></table></figure></li><li>newmapsettings.cfg<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fps_max 30&#x2F;&#x2F; 30 tickrate 配置高可选60fps</span><br></pre></td></tr></table></figure><h2 id="自爆砖家配置"><a href="#自爆砖家配置" class="headerlink" title="自爆砖家配置"></a>自爆砖家配置</h2>适合1M小水管机器</li></ul><p>原帖 <a href="https://tieba.baidu.com/p/6493224666" target="_blank" rel="noopener external nofollow noreferrer">https://tieba.baidu.com/p/6493224666</a></p><ul><li>autoexec.cfg</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">fps_max 500        &#x2F;&#x2F;建议修改为60或者30</span><br><span class="line">rd_adjust_sv_maxrate 0</span><br><span class="line">sv_maxrate 13000</span><br><span class="line">sv_minrate 0</span><br><span class="line">sv_maxupdaterate 8</span><br><span class="line">sv_minupdaterate 5</span><br><span class="line">sv_maxcmdrate 60</span><br><span class="line">sv_mincmdrate 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">net_splitrate 20</span><br><span class="line">net_splitpacket_maxrate 14200</span><br><span class="line">net_maxcleartime 0.001</span><br><span class="line">sv_client_cmdrate_difference 0</span><br><span class="line">sv_client_max_interp_ratio 1</span><br><span class="line">sv_client_min_interp_ratio 1</span><br><span class="line">sv_client_predict 1</span><br><span class="line">sv_parallel_packentities 1</span><br></pre></td></tr></table></figure><h2 id="南方配置。无需修改"><a href="#南方配置。无需修改" class="headerlink" title="南方配置。无需修改"></a>南方配置。无需修改</h2><p>适合测试及高配置服务器</p><h1 id="使用RDA-异形丛生RD高级插件-一般用于服务器"><a href="#使用RDA-异形丛生RD高级插件-一般用于服务器" class="headerlink" title="使用RDA - 异形丛生RD高级插件(一般用于服务器)"></a>使用RDA - 异形丛生RD高级插件(一般用于服务器)</h1><ul><li>插件安装 官网<a href="https://sites.google.com/view/rdadv" target="_blank" rel="noopener external nofollow noreferrer">https://sites.google.com/view/rdadv</a></li></ul><p>将下载好的server.dll放置于游戏目录 Alien Swarm Reactive Drop\reactivedrop\bin 中。</p><ul><li>如果为服务端，只需要安装server.dll</li></ul><div class="note warning"><h4 id="rda作用"><a href="#rda作用" class="headerlink" title="rda作用"></a>rda作用</h4><p>server.dll功能简介<br>使用 server.dll 后的服务器\房间  主要针对rda客户端。无论是否装了rda都可进入服务器。具体看官网</p></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">大堆性能优化（减少服务器崩溃几率）</span><br><span class="line">电梯不再被炮虫炮弹卡住</span><br><span class="line">火焰地雷不再被特殊地形挡住而失效（如darkpath玻璃地板）</span><br><span class="line">寄生虫不再卡出蛋外（原版会闪退）</span><br><span class="line">不同角度的蛋刷的寄生虫有正确角度</span><br><span class="line">虫子在一些地方爬出来时不再被卡住（如 adanaxis 战役第一关，area9800第三关）</span><br><span class="line">高速虫子不再有穿过玩家的bug，如ASBI Classic \ PRO, ASB2 等挑战，意味着可以制作更高速的虫子。</span><br><span class="line">吐绿球的怪不再因为被特殊物品\地形卡住而吐不出来</span><br><span class="line">修复虫子在一些地底能一边刷一边砍你的bug</span><br><span class="line">修复空武器bug</span><br><span class="line">创意工房的足球地图性能更好了。</span><br></pre></td></tr></table></figure><h1 id="使用-HLSM-工具管理服务器"><a href="#使用-HLSM-工具管理服务器" class="headerlink" title="使用 HLSM 工具管理服务器"></a>使用 HLSM 工具管理服务器</h1><div class="note info"><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>HL Server Monitor”是由Rulzy工作室推出的一款免费软件。使用此软件，可以在HL服务器出现严重错误、进程丢失、网络无响应的时候，能自动重启HL服务器，以保证你的HL服务器能持续工作。本软件为免费软件，不提供任何使用保证。</p></div><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/29/b600b845a4d6b.png" alt="hlsm.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/29/60c348af2232c.png" alt="hlsmtj.png"></p><ul><li>实现自动重启等功能。比bat完善。</li><li>比较老的工具了。也可以不使用HLSM，使用rcon功能。</li></ul><p>安装打开后右键增加服务器。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-console -autoupdate -game reactivedrop -port 27016 +map lobby +con_logfile &quot;console.log&quot; -maxplayers 18 +exec server.cfg +hostname &quot;[CN]T3_瀹樺浘_鏇村鍦板浘www.impdx.vip鎼渁srd_&quot;</span><br></pre></td></tr></table></figure><p>参考参数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">下面为可用启动参数：</span><br><span class="line"></span><br><span class="line">-console &#x2F;&#x2F;以控制台模式启动服务器。</span><br><span class="line">-autoupdate &#x2F;&#x2F;开启自动升级</span><br><span class="line">-condebug &#x2F;&#x2F;在cspromod目录下生成记载有开发模式的控制台日志文件console.log。</span><br><span class="line">-game &quot;left4dead2&quot; &#x2F;&#x2F;指定服务器内容为求生之路2，即指定服务器运行的游戏，在控制台模式下此为必须的参数。</span><br><span class="line">-insecure &#x2F;&#x2F;取消Valve的反作弊模块VAC2(Valve Anti-Cheat 2)，欲加载VAC2则取消此参数，让服务器不检测 SteamID。</span><br><span class="line">-ip 192.168.1.2 &#x2F;&#x2F;指定服务器IP地址为192.168.1.2，此IP地址必须是服务器本机有效的内网或外网IP。（提示：假如要用HLSW软件远程管理，必须使用此参数）</span><br><span class="line">-noipx &#x2F;&#x2F;关闭对NetWare IPX的支持，稍微减轻CPU压力，除非是在NetWare LAN上玩。</span><br><span class="line">-port 27026 &#x2F;&#x2F;指定服务器端口为27026，空缺此参数时，则默认27015为服务器端口。（提示：假如要用HLSW软件远程管理，必须使用此参数）</span><br><span class="line">-secure &#x2F;&#x2F;启用Valve的反作弊模块</span><br><span class="line">+exec server.cfg &#x2F;&#x2F;执行指定配置文件</span><br><span class="line">+log on &#x2F;&#x2F;记录日志？</span><br><span class="line">+map c1m1_hotel &#x2F;&#x2F;指定服务器地图为de_dust2，备选地图参照你所使用的游戏的地图。</span><br><span class="line">+maxplayers 14 &#x2F;&#x2F;指定服务器最大人数为14人，范围1~64(根据地图、服务器性能来定)。</span><br><span class="line">+sv_gametypes coop &#x2F;&#x2F;游戏模式，例如求生之路：coop &#x3D; 战役、合作，versus &#x3D; 对抗。</span><br><span class="line">+sv_lan 0 &#x2F;&#x2F;指定服务器为Internet(互联网)服务器。</span><br><span class="line">+sv_lan 1 &#x2F;&#x2F;指定服务器为Lan(局域网)服务器。</span><br><span class="line"></span><br><span class="line">其他参数：</span><br><span class="line"></span><br><span class="line">-defaultgamedir</span><br><span class="line">-buildcubemaps</span><br><span class="line">-nocdaudio</span><br><span class="line">-nosound</span><br><span class="line">-rebuildaudio</span><br><span class="line">-demo</span><br><span class="line">-bi</span><br><span class="line">-ref</span><br><span class="line">-adapter</span><br><span class="line">-freq</span><br><span class="line">-refresh</span><br><span class="line">-refreshrate</span><br><span class="line">-autoconfig</span><br><span class="line">-pme</span><br><span class="line">-allowstalezip</span><br><span class="line">-nomaster</span><br><span class="line">-nopreload</span><br><span class="line">-nopreloadmodels</span><br><span class="line">-nopreloadsounds</span><br><span class="line">-preload</span><br><span class="line">-dxlevel</span><br></pre></td></tr></table></figure><div class="note warning"><h4 id="乱码问题"><a href="#乱码问题" class="headerlink" title="乱码问题"></a>乱码问题</h4><ul><li>关于乱码问题，因为HLSM只支持ansi，但是游戏是支持UTF-8的。</li><li>新建一个文本用atom/notepad++等打开，uft8输入你服务器的名字，接着转换成ANSI，复制这串乱码就可以了。</li><li>已知bug：使用-ip参数时，本机游戏不能进入本机服务器。</li></ul></div><div class="note success"><h4 id="欢迎大佬-小白来提问，修正文章中有错误或者不正常的部分。请在评论区留言"><a href="#欢迎大佬-小白来提问，修正文章中有错误或者不正常的部分。请在评论区留言" class="headerlink" title="欢迎大佬/小白来提问，修正文章中有错误或者不正常的部分。请在评论区留言"></a>欢迎大佬/小白来提问，修正文章中有错误或者不正常的部分。请在评论区留言</h4><ul><li>2020-3-13 去除 sv_forcepreload 1 负优化选项，增加T3workshop.cfg文件。</li></ul></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASRD </tag>
+            
+            <tag> 游戏服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux下制作微pe</title>
+      <link href="/posts/bb7c.html"/>
+      <url>/posts/bb7c.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h1><ul><li>1.微pe引导及其主要文件 链接：<a href="https://pan.baidu.com/s/1e-9zLoEkGLzMuNQ8pqQhpA" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1e-9zLoEkGLzMuNQ8pqQhpA</a> 提取码：m0hl</li><li>2.linux分区软件 实例：gparted。可以用fdisk等等都可以</li></ul><h1 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h1><ul><li><p>安装gparted</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install gparted</span><br></pre></td></tr></table></figure></li><li><p>打开gparted -选择设备 -创建分区表-选择gpt</p></li><li><p>新建两个分区，一个为FAT16(FAT32),用来放三个引导文件。一个为ntfs，用来存放win10镜像（因为fat32不允许单文件超过4g）</p></li><li><p>存放完成后，在gparted 选择 fat分区右键 管理标识符，去掉mfsdata，选择boot和esp。（选boot应该会自动选择esp，如果你是按步骤来的）</p></li><li><p>完成。<br>不会操作可以看视频</p><iframe src="//player.bilibili.com/player.html?aid=89157426&cid=152286357&page=1" width="900px" height="500px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe># 原理</li><li><p>看到网上有很多文章使用grub4dos和fdisk制作pe。大部分都是用mbr，也就是说对于magicbook这种新本本只有uefi。他不支持uefi，并且步骤繁琐</p></li><li><p>提取微pe的引导文件</p></li><li><p>直接制作一个可启动分区，把微pe的文件放入就行了。</p></li><li><p>引用微pe官方的txt(从官方txt中获得的方法233)</p></li></ul><p>感谢您安装了微PE工具箱，本目录包含了微PE的主要启动文件和内核镜像。<br>以下技术支持信息供您DIY参考：</p><p>微PE工具箱安装到硬盘后不会产生过多的文件。只会在系统目录下面放置一个WEPE文件夹和一个WEIPE文件。<strong>WEIPE文件的实质是GRUB4DOS的引导文件GRLDR。</strong>当安装到NT6以上系统且不设置密码不包含DOS时没有WEIPE文件。系统目录还会存放卸载程序UnPE.exe，这个程序在卸载之后会自动消失。</p><p>微PE工具箱安装到U盘后也不会产生过多的文件。当安装方式为方法一四五的时候，会在<strong>根目录下面放置一个WEPE文件夹一个EFI文件夹和一个BOOTMGR文件。</strong>当安装方式为方法二的时候，会出现一个<strong>WEPE文件夹一个EFI文件夹和一个BOOTMGR文件。这些文件都是隐藏的，删除这些文件或格式化U盘即可删除PE。</strong>方法三安装到隐藏分区，在U盘根目录不会出现任何文件，<strong>若需要删除方法三安装的PE，只需用方法一二四五重新制作一次PE后手动格式化即可。</strong></p><p>微PE工具箱生成ISO镜像后也不会产生过多的文件。根目录有WEPE文件夹EFI文件夹和BOOTMGR文件。</p><p>WEPE文件夹中每个文件对应的作用如下：</p><pre><code>WEPE.TXT - 微PE工具箱说明文档。WALLPAPER.JPG － 若存在则为自定义PE桌面壁纸文件。WEPE.INI － 外置程序的配置文件，可以对PE桌面、开始菜单等进行配置。Res目录 - 若存在，则为放置硬盘安装后保存的引导工具。引导部分WEPE64.WIM - WINPE的镜像文件，32位的是WEPE32.WIM。B64 - BCD文件，32位的是B32。WEPE64 - 原名 BOOTMGR，32位的是WEPE32。WEPE.SDI - 原名 BOOT.SDIWEIPE - GRUB4DOS的引导文件GRLDRPELOAD - 用来启动WEIPEMAXDOS.IMG - MAXDOS的镜像文件WEPE.INI - GRUB4DOS菜单MESSAGE - GRUB4DOS背景文件</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搜狗输入法 debian 无法显示中文 解决方案（依赖问题）</title>
+      <link href="/posts/6c0.html"/>
+      <url>/posts/6c0.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="搜狗输入法无法显示中文如图所示"><a href="#搜狗输入法无法显示中文如图所示" class="headerlink" title="搜狗输入法无法显示中文如图所示"></a>搜狗输入法无法显示中文如图所示</h1><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/12/6b1bb80243b21.jpg" alt="问题.jpg"></p><h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>阅读多篇文章之后发现依赖存在问题</p><p>尝试</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -f</span><br></pre></td></tr></table></figure><h2 id="显示正常"><a href="#显示正常" class="headerlink" title="显示正常"></a>显示正常</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sogou-qimpanel # 有个环境报错位libQtDecarative.so.4</span><br></pre></td></tr></table></figure><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/12/47012a1bb13c1.jpg" alt="sogou-qimpanel.jpg"></p><ul><li>去debian官网搜libQtDecarative.so.4，发现对应的包为    <code>libqt4-declarative</code></li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/12/f3f2e04f8051d.png" alt="debian.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/12/a204268b11d1c.png" alt="debian2.png"></p><ul><li>于是apt一下就好了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install libqt4-declarative</span><br></pre></td></tr></table></figure><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/12/8f464eff052fd.jpg" alt="解决完成.jpg"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>deepin亮度问题</title>
+      <link href="/posts/4333.html"/>
+      <url>/posts/4333.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="deepin-亮度问题"><a href="#deepin-亮度问题" class="headerlink" title="deepin 亮度问题"></a>deepin 亮度问题</h1><p>deepin装好之后。一部分magicbook会出现亮度问题特别暗，有些是升级完内核之后才会出现。</p><p>这里提供一个解决方案</p><ul><li><p>根目录下（deepin可以在系统盘下找），找到sys/class/backlight/amd_gpubl0/brightness文件，打开看到数值很低，改高点就没问题了</p></li><li><p>注意：不一定是amd_gpu，有可能是intel的，看具体型号而定。博主改了200。重启正常</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图床的推荐</title>
+      <link href="/posts/11d0.html"/>
+      <url>/posts/11d0.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于hexo使用的免费图床"><a href="#关于hexo使用的免费图床" class="headerlink" title="关于hexo使用的免费图床"></a>关于hexo使用的免费图床</h1><p>更新为2020.3.22</p><ul><li>GitHub+PicGo+jsDelivr 搭建自己的私人图床（无备案推荐）</li><li>七牛图床（有备案推荐）</li><li>微博图床（凉凉）</li><li>qq图床（不推荐）</li><li>风过不留痕大佬的图床 <a href="https://pic.alexhchu.com/" target="_blank" rel="noopener external nofollow noreferrer">https://pic.alexhchu.com/</a> （强烈推荐+1）</li><li>其他我这里就不推荐了</li></ul><h1 id="GitHub-PicGo-jsDelivr-搭建自己的私人图床"><a href="#GitHub-PicGo-jsDelivr-搭建自己的私人图床" class="headerlink" title="GitHub+PicGo+jsDelivr 搭建自己的私人图床"></a>GitHub+PicGo+jsDelivr 搭建自己的私人图床</h1><ul><li>教程很多，操作简单，可拓展性强，速度快并且背靠github，jsdelivr都是全球靠谱的社区/cdn。github作为储存空间使用jsdelivr加速图片。</li><li>属于滥用github系列。</li><li>白嫖党的福利。</li></ul><h1 id="七牛图床"><a href="#七牛图床" class="headerlink" title="七牛图床"></a>七牛图床</h1><p>一开始很多人推荐使用这个</p><ul><li><p>优点</p><ul><li>速度快</li><li>支持https</li><li>10g够轻度人群使用。</li></ul></li><li><p>缺点</p><p>  但是现在不好用了，为啥？</p><ul><li><strong><em>因为他需要你是用备案域名！！！</em></strong> 使用coding以及github的pages无法备案</li></ul></li></ul><h1 id="微博图床"><a href="#微博图床" class="headerlink" title="微博图床"></a><del>微博图床</del></h1><ul><li><p><strong>2020.2.11 快凉了别看了</strong> 已有防盗链</p></li><li><p>优点</p><ul><li>无限上传</li><li>支持https</li><li>自带cdn加速非常快</li></ul></li><li><p>缺点</p><ul><li>图片会被打上无形的微博图标</li><li>带人工审核/人工智障的审核图片，有时候会清理图片</li></ul></li></ul><h1 id="QQ图床"><a href="#QQ图床" class="headerlink" title="QQ图床"></a>QQ图床</h1><ul><li><p>使用qq空间的相册</p></li><li><p>优点</p><ul><li>访问快，容量好像没有限制吧</li></ul></li><li><p>缺点</p><ul><li>QQ空间说不定哪天就设置上防盗链系统，而且更换域名</li><li>这不是腾讯推荐的方式，腾讯也未承诺此功能将一直可用，服务器使用的SSL证书域名是*.<a href="http://photo.store.qq.com，不排除将来更换域名的可能。" target="_blank" rel="noopener external nofollow noreferrer">http://photo.store.qq.com，不排除将来更换域名的可能。</a></li><li><a href="http://r.photo.store.qq.com仅有一个节点，在上海，电信、联通、移动三线接入。而且该节点仅提供大图，所以节点很可能会出现网络拥堵的情况，不排除腾讯为了服务稳定而对每个访问进行限速处理" target="_blank" rel="noopener external nofollow noreferrer">http://r.photo.store.qq.com仅有一个节点，在上海，电信、联通、移动三线接入。而且该节点仅提供大图，所以节点很可能会出现网络拥堵的情况，不排除腾讯为了服务稳定而对每个访问进行限速处理</a><h1 id="本人自用"><a href="#本人自用" class="headerlink" title="本人自用"></a>本人自用</h1></li></ul></li><li><p>更新于 2020.2.11</p></li><li><p>风过不留痕的图床</p></li><li><p>优点</p><ul><li>免费</li><li>速度快</li><li>无需备案</li><li><del>目前无容量限制</del></li></ul></li><li><p>缺点</p><ul><li>不知道啥时候跑路。（基本稳定）</li><li>然后没啥缺点了。</li></ul></li><li><p><a href="https://pic.alexhchu.com/" target="_blank" rel="noopener external nofollow noreferrer">https://pic.alexhchu.com/</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ax200与linux debian deepin</title>
+      <link href="/posts/1017.html"/>
+      <url>/posts/1017.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="ax200与deebian-deepin"><a href="#ax200与deebian-deepin" class="headerlink" title="ax200与deebian deepin"></a>ax200与deebian deepin</h1><p>解决ax200与debian/deepin的驱动问题（蓝牙，wifi）</p><p>注：所有操作都需要root权限，可以sudo也可以su 提权。</p><p>仅测试过debian10.2.0与deepin15.11 笔记本型号为magicbook 2500u 2018款</p><h1 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h1><p>我们从ax200官网了解到ax200需要linux kernel为5.1及以上</p><h2 id="编译内核（适用于debian-deb系linux都可以，一些linux可能需要配置）"><a href="#编译内核（适用于debian-deb系linux都可以，一些linux可能需要配置）" class="headerlink" title="编译内核（适用于debian/deb系linux都可以，一些linux可能需要配置）"></a>编译内核（适用于debian/deb系linux都可以，一些linux可能需要配置）</h2><p>需要的工具<br>automake、make、g++（包含gcc）、bison、flex、libelf-dev、libssl-dev、bc。</p><ul><li><p>安装工具命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y automake make g++ bison flex libelf-dev libssl-dev bc</span><br></pre></td></tr></table></figure><p>下载内核源码，解压（提取）。进入内核源码文件夹目录。</p></li><li><p>拷贝当前系统配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;boot&#x2F;config-4.19.0-6-amd64 .config</span><br></pre></td></tr></table></figure></li><li><p>为新内核生成配置 ```<br>make olddefconfig</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">注释掉.config文件中四处配置：CONFIG_MODULE_SIG_ALL、CONFIG_MODULE_SIG_KEY、CONFIG_SYSTEM_TRUSTED_KEYS和CONFIG_DEBUG_INFO。</span><br><span class="line"></span><br><span class="line">- 编译内核（-j设置线程数）：</span><br></pre></td></tr></table></figure><p>make clean &amp;&amp; make -j 8</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   -j 8是线程的意思，具体多少看你的cpu而定</span><br><span class="line"></span><br><span class="line">编译需要耐心等待。途中出现yes&#x2F;no&#x2F;enter时，直接enter。如果只有yes，no。输入no</span><br><span class="line"></span><br><span class="line">- 安装内核模块：</span><br></pre></td></tr></table></figure><p>sudo make modules_install</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 安装内核：</span><br></pre></td></tr></table></figure><p>sudo make install</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 更新GRUB：</span><br></pre></td></tr></table></figure><p>sudo update-grub</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 重启，检查新内核：</span><br></pre></td></tr></table></figure><p>uname -r</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 删除旧内核：</span><br></pre></td></tr></table></figure><p>sudo apt remove –purge linux-image-4.19.0-6-amd64</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 重启</span><br></pre></td></tr></table></figure><p>reboot</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 完事</span><br><span class="line"></span><br><span class="line">## 使用Ubuntu ppa编译好的内核（适用于deepin）</span><br><span class="line">- 首先下载：https:&#x2F;&#x2F;kernel.ubuntu.com&#x2F;~kernel-ppa&#x2F;mainline&#x2F;</span><br><span class="line"></span><br><span class="line">如何选择，一般选择为https:&#x2F;&#x2F;kernel.org&#x2F; 中的大黄色一块中的版本就行</span><br><span class="line"></span><br><span class="line">如何选择文件</span><br><span class="line"></span><br><span class="line">如下图所示。</span><br><span class="line">![Ubuntuppa.png](https:&#x2F;&#x2F;files.alexhchu.com&#x2F;2020&#x2F;02&#x2F;11&#x2F;6c2be4a57d6fe.png)</span><br><span class="line"></span><br><span class="line">- deepin可直接打开安装，一步步安装就行了。</span><br><span class="line">- 命令安装方式：首先需要进到目录打开终端 之后</span><br></pre></td></tr></table></figure><p>sudo dpkg -i *.deb</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 安装完成后</span><br></pre></td></tr></table></figure><p>sudo update-grub</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 重启</span><br></pre></td></tr></table></figure><p>reboot</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 重启后查看内核</span><br></pre></td></tr></table></figure><p>uname -a</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">完事</span><br><span class="line"># 升级firmware</span><br><span class="line">- 下载firmware 建议清华源 https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;kernel&#x2F;firmware&#x2F; 下载最下面的tar.xz就完事</span><br><span class="line">- 下载完后解压，在解压完成后进到目录打开终端</span><br></pre></td></tr></table></figure><p>make check</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 在执行</span><br></pre></td></tr></table></figure><p>make install<br>update-initramfs -uk all</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 重启</span><br></pre></td></tr></table></figure><p>reboot<br>```</p></li><li><p>完事</p></li></ul><iframe src="//player.bilibili.com/player.html?aid=88268830&cid=150792457&page=3" width="900px" height="500px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe># 小结- 一共两部分- 升级内核与升级firmware- 如有问题可以评论区发表。也可以联系博主- 看不懂可以看视频操作]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>magicbook 与debian的故事</title>
+      <link href="/posts/8a03.html"/>
+      <url>/posts/8a03.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>2020.2.11 原文中iwlwifi方法已经失效，参考ax200的文章。</strong></p><p>安装很慢的原因 选择 高级选项里的exp install安装时，去掉安全源更新。因为安全源是国外的。你选了国内镜像也是从国外下载的。</p><p>magicbook AMD2500U与debian的故事</p><h1 id="扯淡篇"><a href="#扯淡篇" class="headerlink" title="扯淡篇"></a>扯淡篇</h1><h2 id="为什么选择debian"><a href="#为什么选择debian" class="headerlink" title="为什么选择debian"></a>为什么选择debian</h2><p>因为我喜欢</p><h2 id="下载debian"><a href="#下载debian" class="headerlink" title="下载debian"></a>下载debian</h2><p>建议清华源去下载<br><a href="https://mirrors.tuna.tsinghua.edu.cn/debian-cd/" target="_blank" rel="noopener external nofollow noreferrer">https://mirrors.tuna.tsinghua.edu.cn/debian-cd/</a></p><p>debian-cd/10.0.0/amd64/iso-dvd/ 下载DVD1就够了</p><p>其他的2,3都是软件包</p><h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><p>在这里我使用rufus<br>直接刻录进u盘</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>安装不多说了吧。</p><p>有几点要注意下</p><ul><li>装的时候会显示没有wifi驱动，选否跳过</li><li>装的时候如果没有域名填写loaclhost</li><li>其他好像也没啥问题了。</li></ul><h1 id="开始采坑（正文）"><a href="#开始采坑（正文）" class="headerlink" title="开始采坑（正文）"></a>开始采坑（正文）</h1><p> 如果你使用桌面环境会无法进入。<br>因为缺少依赖包</p><p>会发现grub引导进系统后光标在左上角一直跳动，怎么解决呢</p><p>ctrl+alt+F2</p><p>你会发现可以进入tty2<br>然后开始重点了</p><ul><li>改源<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br><span class="line">或者</span><br><span class="line">vi &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure></li></ul><p>建议使用nano，如果比较熟悉可以选择vim</p><p>使用清华源或者其他国内源，推荐中科大，清华，阿里。不推荐华为。<br>详细教程可以看清华源官网 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/" target="_blank" rel="noopener external nofollow noreferrer">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster main contrib non-free</span><br><span class="line"># deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster main contrib non-free</span><br><span class="line">deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster-updates main contrib non-free</span><br><span class="line"># deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster-updates main contrib non-free</span><br><span class="line">deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster-backports main contrib non-free</span><br><span class="line"># deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian&#x2F; buster-backports main contrib non-free</span><br><span class="line">deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian-security buster&#x2F;updates main contrib non-free</span><br><span class="line"># deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;debian-security buster&#x2F;updates main contrib non-free</span><br></pre></td></tr></table></figure><p>nano 是ctrl+o保存然后回车，按ctrl+x</p><p>vim是在命令模式下按： 然后输入wq 接着回车</p><ul><li>改完源之后就需要安装安装firmware-linux-nonfree</li></ul><p>我看我的x-server报错为firmware<br>然后输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install firmware-linux-nonfree</span><br></pre></td></tr></table></figure><p>接着如果出现Y/N 输入Y 回车</p><p>然后等会输入reboot。重启</p><ul><li>你会发现桌面出来了。但是没有wifi，有蓝牙</li></ul><p>进入桌面后，使用ctrl+alt+T弹出终端<br>输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure><p>然后输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install firmware-iwlwifi</span><br></pre></td></tr></table></figure><p>一路Y下去<br>然后输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">modprobe -r iwlwifi</span><br><span class="line">modprobe iwlwifi</span><br></pre></td></tr></table></figure><p>然后我使用的是wicd<br>输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude install wicd</span><br></pre></td></tr></table></figure><p>然后在桌面中搜索wicd network manager就行了。</p><p>你会发现wifi可以用了</p><ul><li>root下debian/Ubuntu 默认不加载pluseaudio</li></ul><p>这个你会发现你使用root登录无法开启扬声器。。但是普通用户却可以用<br>怎么解决呢<br>在 /root/.profile 文件最后加上</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pulseaudio --start --log-target&#x3D;syslog</span><br></pre></td></tr></table></figure><p>接着在终端中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source  &#x2F;root&#x2F;.profile</span><br></pre></td></tr></table></figure><p>使之生效就ok啦</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul><li>装好后需要安装firmware-linux-nonfree 不然无法启动桌面环境</li><li>wifi 需要驱动firmware-iwlwifi</li><li>root用户下pluseaudio需要加载。（root用户下没声音）</li><li>桌面刚装好是很丑的需要美化，个人推荐lxqt+xfwm4 占用内存小。然后去github搜 lxqt theme/xfwm theme</li><li>grub2也需要美化 github搜 grub2 theme</li></ul><iframe src="//player.bilibili.com/player.html?aid=88268830&cid=150791118&page=4" width="900px" height="500px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe># 附上桌面截图![GCWv.jpg](https://files.alexhchu.com/2020/02/11/1ee1de5b59d71.jpg)![Gs78.jpg](https://files.alexhchu.com/2020/02/11/6b7eb224fd00f.jpg)![GTfp.png](https://files.alexhchu.com/2020/02/11/a8196e1586e94.png)]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高职技能考（数媒+VB）2019 心得</title>
+      <link href="/posts/edba.html"/>
+      <url>/posts/edba.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="仅代表个人意见"><a href="#仅代表个人意见" class="headerlink" title="仅代表个人意见"></a>仅代表个人意见</h1><ul><li>一般题库或者模拟题中遇到大量的，或者是从没见过的知识点。那么基本上都是考这些知识点</li><li>根据考纲来学习，来缩小范围。</li><li>站在出题人的角度去思考，解决问题</li><li>重点，难点在于各种算法的理解和运用</li><li>基础知识一定要打牢。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 高考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高职考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VB笔记(完结)</title>
+      <link href="/posts/e642.html"/>
+      <url>/posts/e642.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="VB笔记（高职考）"><a href="#VB笔记（高职考）" class="headerlink" title="VB笔记（高职考）"></a>VB笔记（高职考）</h1><h2 id="1-elseif的坑"><a href="#1-elseif的坑" class="headerlink" title="1.elseif的坑"></a>1.elseif的坑</h2><p>2019.9.17</p><p>elseif只适用于块语句</p><figure class="highlight plain"><figcaption><span>Basic</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">If Check1(0).Value &#x3D; 1 Then</span><br><span class="line">Text1.FontBold &#x3D; True</span><br><span class="line"></span><br><span class="line">ElseIf Check1(0).Value &#x3D; 0 Then</span><br><span class="line">Text1.FontBold &#x3D; False</span><br><span class="line"></span><br><span class="line">ElseIf Check1(1).Value &#x3D; 1 Then</span><br><span class="line">Text1.FontBold &#x3D; True</span><br><span class="line"></span><br><span class="line">endif</span><br></pre></td></tr></table></figure><p>这样是可行的那如果是这样</p><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">If</span> Check1(<span class="number">0</span>).Value = <span class="number">1</span> ThenText1.FontBold = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ElseIf</span> Check1(<span class="number">0</span>).Value = <span class="number">0</span> ThenText1.FontBold = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ElseIf</span> Check1(<span class="number">1</span>).Value = <span class="number">1</span> ThenText1.FontBold = <span class="literal">True</span></span><br></pre></td></tr></table></figure><p>就会报错为<strong><em>else没有if</em></strong>，因为语句结构不是块语句，属于行语句。而elseif只适用于块语句。</p><p>其实我认为这个elseif这个规则很不错，适合的换行可以极大的提升代码可阅读性</p><h2 id="2-case的语法"><a href="#2-case的语法" class="headerlink" title="2.case的语法"></a>2.case的语法</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">Case</span> Option1(Index).Value = <span class="literal">True</span>   这行是很重要的。定义了条件。注意<span class="keyword">case</span>语句只能用于一个变量。</span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">0</span>                            当index值为<span class="number">0</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为红色"</span></span><br><span class="line">Text1.ForeColor = vbRed</span><br><span class="line"></span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">1</span>                            当index值为<span class="number">1</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为蓝色"</span></span><br><span class="line">Text1.ForeColor = vbBlue</span><br><span class="line"></span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">2</span>                            当index值为<span class="number">2</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为绿色"</span></span><br><span class="line">Text1.ForeColor = vbGreen</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Select</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">特点：只能适用于一个变量</span><br><span class="line">如果你的条件同时要满足 index的值，value的属性。那么<span class="keyword">case</span>不适合这个事件。</span><br><span class="line"></span><br><span class="line">这就像你又要吃得饱，又想吃得少。也不是没有办法，压缩饼干。</span><br><span class="line"></span><br><span class="line">如果你非要使用<span class="keyword">case</span>那么可以从整个模块考虑，增加一个函数。方法很多。</span><br></pre></td></tr></table></figure><h2 id="什么index。"><a href="#什么index。" class="headerlink" title="什么index。"></a>什么index。</h2><p>如果你使用控件数组，index的值就像ID一样，一个复选框对应值一个ID(index)</p><p>是来区分控件的。它是唯一的。就像你的身份证号码一样。</p><p>而名称和caption就像你的名字和绰号一样。caption属性是显示在控件上的，是看得见的</p><p>名称就是你创建的控件的名字。就和我们的名字差不多。一般不会重叠，在运行中他看不见，开发界面可以看见。你可以更改。<strong><em>同一控件数组需要同一名称。</em></strong></p><p>caption属性就像同学给你取得绰号一样。比如我可以叫张三，你也可以叫张三。</p><h1 id="考纲2部分与3部分预览（word文件在文章尾部）"><a href="#考纲2部分与3部分预览（word文件在文章尾部）" class="headerlink" title="考纲2部分与3部分预览（word文件在文章尾部）"></a>考纲2部分与3部分预览（word文件在文章尾部）</h1><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/2b71f80c79d5a.png" alt="考纲2and3_1_13.png"></p><h1 id="关于技能考的一些心得"><a href="#关于技能考的一些心得" class="headerlink" title="关于技能考的一些心得"></a>关于技能考的一些心得</h1><ul><li>VB技能很简单，如果你不看答案会做出模拟卷或者题库的题目(东博题库做第一遍建议不看答案自己想)，完全不必担心</li><li>注意保存（有时候目录不一定准，看到的试题一可能是数媒的）！！！生成exe文件！！！</li><li>读代码的时候不要卡在一个模块里，去全局性的看</li><li>你会发现难度比你所做的任何一套题目都简单</li><li>平时练习，一定要认真</li><li>2019考点我整理过了，可能不完整。</li><li>大部分填空上下文都有提示。</li></ul><p>附上 word链接</p><p>链接：<a href="https://pan.baidu.com/s/16ZrBjJjhfdYEG397GRgPIQ" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/16ZrBjJjhfdYEG397GRgPIQ</a></p><p>提取码：a6h0</p><p>失效了在评论区dd，也可以联系我，点<a href="https://www.impdx.vip/about/">这里</a>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VB </tag>
+            
+            <tag> 高职考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高三复习计划</title>
+      <link href="/posts/bd8a.html"/>
+      <url>/posts/bd8a.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="高三复习计划"><a href="#高三复习计划" class="headerlink" title="高三复习计划"></a><center>高三复习计划</center></h1><p>ps：由于我的字写的不太美观，所以建议浏览器输入<a href="http://www.impdx.vip">www.impdx.vip</a> 去查看，这是我的个人博客网站。那里的排版更好，手写我的字是硬伤。</p><p> 相比较千篇一律的复习计划。我有着很明确的规定，也有较为准确的判断和较为良好的实现方式 。</p><p> <strong>我只是让我在适合的时候做适合的事。因为我知道是个人 都会有不确定因素，不可能绝对的的按照计划进行。所以我会每天定个小目标，每天去实现他，实现了之后，跟昨天的目标比较，再去考虑能不能增加，当然有个前提：除非不可抗力因素，不然绝对不能减少。</strong></p><p> 难再坚持 水滴石穿，这里有个公式<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">        1.01的365次方等于37.8,</span><br><span class="line"></span><br><span class="line">        0.99的365次方等于0.03。</span><br><span class="line"></span><br><span class="line">这个公式被网友解读为：</span><br><span class="line"></span><br><span class="line">   每天进步一点点，屌丝一年变富帅；</span><br><span class="line"></span><br><span class="line">   每天退步一点点，富美一年变挫矮。</span><br><span class="line"></span><br><span class="line">365次方代表一年的365天，</span><br><span class="line"></span><br><span class="line">          1代表每一天的努力，</span><br><span class="line"></span><br><span class="line">          1.01表示每天多做0.1,</span><br><span class="line"></span><br><span class="line">          0.99代表每天少做0.1，</span><br></pre></td></tr></table></figure><br>这个励志公式很有意思，但是高考这样不行，因为留给我们的时间太少了。而且每个人都是1。</p><p>所以我想能不能每天加个0.01，如果不能增加，那么至少也得保持比别人多出0.01吧。（这里的别人指的是优秀的童鞋）</p><p>我知道高考只是人生的一段路，我还有很长的路要走。但是走这段路，我更想理性，有计划性的去对待。</p><p>很多人说我会疯狂的，努力的去学习。首先呢没有效率，然后呢 很容易三分钟热度。我更喜欢理性，对我个人情况而言。</p><p>这里有重要的一句话：</p><p> <strong>如果你做不到，纸上谈兵，那岂不是由走变成了原地踏步。</strong></p><hr><h2 id="运用SWOT简单的分析下我现在的情况"><a href="#运用SWOT简单的分析下我现在的情况" class="headerlink" title="运用SWOT简单的分析下我现在的情况"></a>运用SWOT简单的分析下我现在的情况</h2><p> 我是计算机专业的学生。计算机是我的爱好，所以专业方面不用担心。因为我喜欢计算机。</p><ul><li>strengths：我有动力去学习，我热爱计算机，并且我想上一所较好的大学，我也有梦想。</li></ul><ul><li>weaknesses：数学不太理想 我只对自己有兴趣的学习，而不感兴趣的无动于衷 。</li></ul><ul><li><p>opportunities：</p><p>  1.这份复习计划书对于我而言，或许是一个机会，让我认清自己的机会。</p><p>  2.高三所剩不多的时间，也是一个机会，让我可以慢慢改正，优化我的缺点</p><p>  3.高考是一个大机会，我想抓住它，不放手。</p></li></ul><ul><li>threat：在学习方面，threat就是我的weaknesses。</li></ul><hr><h2 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h2><p>那我要如何去一步步完善我的weaknesses呢。</p><p>不感兴趣怎么办，那就把他变成你的日常习惯，变成你感兴趣的。</p><p><strong>高三我打算重点抓语数</strong></p><p>计算机职高考，语数计算机</p><p>语数各150   计算机300  总分600</p><p>我的目标 500分。最低的要求，超过400分。</p><p>计算机我相信通过日常的训练和老师的讲解我可以拿到一个满意的分数</p><p>最最最基础的就是上课认真听讲，完成老师布置的作业。如果这点都做不到，那么我想下面就没意义了。</p><p>语文每天的早读就是一个好机会，我首先会拿出15分钟去背诵古诗宋词。再去读文言文，特别，特别是文言文的注释以及含义</p><p>那么早上利用完成了，那还不够。远远不够。睡前我会去读几篇文章，来让我的写作水平提高所谓<strong>冰冻三尺非一日之寒</strong>。</p><p>提高写作水平可不是嘴上说说就好了，我知道提高他有多难，所以我会竭尽所能的去提高。</p><p>专门针对数学，正文开始了啊。</p><p>分为 课内外俩大板块</p><p>课内：认真听讲，如果连这点都做不到，那我还写这篇文章干啥。笔记！笔记！笔记！ 重要的事情说三遍。我相信高三的老师肯定会认真的给我们复习，但是如果我听完这堂课，晚上我又忘了怎么办。？所以睡前30分钟我会去拿出10分钟，去阅读笔记。我不能对我要求太高，不然我肯定知道，实现不了。</p><p>课外：课外对于我自身而言，是个优势，我会在网易云课堂上学习高中数学，也为了将来大学更好的基础。具体课程我在暑假已经找好了。我本打算暑假就开始学习，也有想法写一篇规划。可是处于某种原因，只复习了很少一部分。</p><p>1.在网易云课堂中学习高中数学。为什么我不去选择MOOC.因为我网易云花了钱买的课！！！</p><p>2.在周末时间去刷题。做练习，资料已经找好了，是网易课堂小马老师的资料。也已经打印出来了。</p><p>3.怎么保证复习完数学？，我不敢保证，但是我可以保证这点，我会把职高考数学的相关部分复习在复习，我只能保证这点</p><p>4.主攻高二的数学。高一我的数学虽然只有及格分。但是高二出于身体原因大部分时间都在医院。</p><hr><h2 id="怎么去实现"><a href="#怎么去实现" class="headerlink" title="怎么去实现"></a>怎么去实现</h2><p>这是最难得一点。</p><p>我想了很多种方法，最真实有效的一种方法。针对于我个人而言。</p><h3 id="第一道防线-最基础的"><a href="#第一道防线-最基础的" class="headerlink" title="第一道防线 最基础的"></a>第一道防线 最基础的</h3><p>由于身体原因我是不住宿的情况，所以每天定俩个闹钟</p><p>1.早上起床的闹钟：闹钟提示：别忘了你今天的计划，做不到的话，你会原地踏步。</p><p>2.晚上睡觉的闹钟：闹钟提示：你觉得你做到了么，问心无愧了么，还是你还在浪费时间。</p><h3 id="第二道防线-很重要！！！"><a href="#第二道防线-很重要！！！" class="headerlink" title="第二道防线 很重要！！！"></a>第二道防线 很重要！！！</h3><p>1.每天晚上闹钟响了以后花10分钟去思考，明天的目标</p><p>2.<strong>每天早上闹钟响了以后花5分钟去阅读励志句子。</strong> 很重要！！！<br>  如果你没有去阅读励志的句子，你就会没有动力。或者说，你暂时性的懒惰。<br>  读了励志句子，很明显的变化，你会感觉今天是你很特别的一天，并且可以一天天循环下去。</p><h3 id="第三道防线"><a href="#第三道防线" class="headerlink" title="第三道防线"></a>第三道防线</h3><p> 准确的说，我想让语文数学成为我的爱好，所以</p><p> 我可能不需要第三道防线，因为在这段时间我会让文章上的这些变成我的日常。（迷之自信）</p><hr><p>我为什么没有过分流考。说来也是巧，会考的时候，大部分时间都在医院待着……再来一次我肯定过</p><p>这些是建立在个人情况的基础上，所以经过仔细的分析，我觉得这些方法比较适合我。对我比较有用。</p><p>个人情况不详细介绍（因为我也不想详细介绍），只做稍微简单的分析。根据SWOT以及综合情况而言我认为这是比较适合我的方法。</p><h3 id="我写文章，不单单是给在看这些文章的小伙伴们看。最主要的，是写给我自己看"><a href="#我写文章，不单单是给在看这些文章的小伙伴们看。最主要的，是写给我自己看" class="headerlink" title="我写文章，不单单是给在看这些文章的小伙伴们看。最主要的，是写给我自己看"></a><strong>我写文章，不单单是给在看这些文章的小伙伴们看。最主要的，是写给我自己看</strong></h3><p>很多人说，这不可能做到，这太规律了，我想说：<strong>可能和不可能的定义在于你自己。</strong></p><p>最后，希望我职高考顺利。我非常希望，我的朋友们可以看到这篇文章，指出我需要改正的地方，以及我方法的缺陷和文章的逻辑漏洞。或许我的表达方式不太好，请提出意见。让我变得更好。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 高考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高职考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown-中点击查看原图</title>
+      <link href="/posts/962e.html"/>
+      <url>/posts/962e.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><ul><li><p>起因<br>我发现我使用的图床，点击图片后直接到图床的展示页面</p></li><li><p>markdown 示例</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[![G1Ii.png](https:&#x2F;&#x2F;img.fengz.me&#x2F;images&#x2F;2019&#x2F;07&#x2F;23&#x2F;G1Ii.png)](https:&#x2F;&#x2F;img.fengz.me&#x2F;images&#x2F;2019&#x2F;07&#x2F;23&#x2F;G1Ii.png)</span><br></pre></td></tr></table></figure><h1 id="图片，超链接语法相关小知识"><a href="#图片，超链接语法相关小知识" class="headerlink" title="图片，超链接语法相关小知识"></a>图片，超链接语法相关小知识</h1><p>我们来看一下这个语法。</p></li><li><p>外链的超链接</p></li></ul><p>Markdown 对链接的语法为：<a href=""></a>,如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">[我是外链的超链接](https:&#x2F;&#x2F;www.impdx.vip)</span><br><span class="line"></span><br><span class="line">[]()</span><br></pre></td></tr></table></figure><ul><li>图片显示</li></ul><p>Markdown 对图片链接的语法是:<img src= "/img/loading.gif" data-lazy-src="" alt="">,如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图注:impdx](https:&#x2F;&#x2F;img.fengz.me&#x2F;images&#x2F;2019&#x2F;06&#x2F;07&#x2F;y9N.jpg)</span><br><span class="line"></span><br><span class="line">![]()</span><br></pre></td></tr></table></figure><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ul><li>实现点击图片查看原图。<blockquote><p>原理就是使用超链接语法</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[![我是photo](缩略图 url)](原图 url)  ------- 点击图片查看原图</span><br><span class="line">   ![我是photo](缩略图 url) --------  markdown 图片语法</span><br><span class="line">[                       ](原图 url) -------- markdown 超链接语法</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>获取网页中超链接PY源码</title>
+      <link href="/posts/c244.html"/>
+      <url>/posts/c244.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于源码的使用"><a href="#关于源码的使用" class="headerlink" title="关于源码的使用"></a>关于源码的使用</h1><ul><li>使用了request,bs4的库</li><li>可以用来抓取网页中的超链接（可以设置规则）。并写入到url.txt中。</li><li>我是用来抓创意工坊的mod超链接的。<h3 id="只是做个笔记。方便寻找。"><a href="#只是做个笔记。方便寻找。" class="headerlink" title="只是做个笔记。方便寻找。"></a>只是做个笔记。方便寻找。</h3>各路大佬也可以来指点指点。</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">url = urlopen(<span class="string">'https://steamcommunity.com/app/563560/workshop/'</span>)  <span class="comment"># 获取网页</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bs = BeautifulSoup(url, <span class="string">'html.parser'</span>)  <span class="comment"># 解析网页</span></span><br><span class="line">hyperlink = bs.find_all(<span class="string">'a'</span>)  <span class="comment"># 获取所有超链接</span></span><br><span class="line">file = open(<span class="string">'./url.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> h <span class="keyword">in</span> hyperlink:</span><br><span class="line">    hh = h.get(<span class="string">'href'</span>)</span><br><span class="line">    <span class="keyword">if</span> hh <span class="keyword">and</span> <span class="string">'/sharedfiles/filedetails/'</span> <span class="keyword">in</span> hh <span class="keyword">and</span> <span class="string">'#comments'</span> <span class="keyword">not</span> <span class="keyword">in</span> hh:  <span class="comment"># 筛选链接</span></span><br><span class="line">        print(hh)</span><br><span class="line">        file.write(hh)  <span class="comment"># 写入到“urltxt”文件中</span></span><br><span class="line">        file.write(<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>5分钟学会装系统（一）</title>
+      <link href="/posts/e707.html"/>
+      <url>/posts/e707.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li>本教程适用于小白用户，也就是什么都不懂的小伙伴</li><li>本教程是CGI相关教程</li><li>不适合大佬浏览。。</li><li>欢迎各位评论，讨论，补充，指出不正确的地方。</li></ul><p>需要u盘一只（8g起步吧），好的电脑一部。机智如你的小伙伴一只。</p><h1 id="下载pe"><a href="#下载pe" class="headerlink" title="下载pe"></a>下载pe</h1><p><a href="http://www.wepe.com.cn/download.html" target="_blank" rel="noopener external nofollow noreferrer">http://www.wepe.com.cn/download.html</a> 镜像也可以在里面下载，ghost镜像不提供下载地址，个人使用装机员官网的镜像（ghost）。<br>下载64位新版pe。<br>然后打开下载的exe</p><h1 id="安装PE"><a href="#安装PE" class="headerlink" title="安装PE"></a>安装PE</h1><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/705236292aac5.png" alt="G1Ii.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/9200ed785a63e.png" alt="GIN2.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/261e296ab5150.png" alt="GvgJ.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/d6b7d87ef9c7e.png" alt="GcOU.png"></p><h1 id="进入BIOS-uefi"><a href="#进入BIOS-uefi" class="headerlink" title="进入BIOS/uefi"></a>进入BIOS/uefi</h1><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/ec57742a40ea8.png" alt="GK7z.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/386b840ee7e46.png" alt="Ga4L.png"></p><h1 id="选择u盘启动。"><a href="#选择u盘启动。" class="headerlink" title="选择u盘启动。"></a>选择u盘启动。</h1><p>现在新电脑插好u盘直接开机可以直接进PE。<br>如果不会可以私聊。这个部分后续会详细讲解。<br>ASUS的快捷键为F8。现在都是uefi可以使用鼠标找到。</p><p>5<img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/565f672d26500.png" alt="G4NX.png"></p><ul><li>加载中</li></ul><p>6<img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/7c85f03a3e76e.png" alt="G7RN.png"></p><ul><li>选择第一个</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/f73d7b6dab230.png" alt="GuHw.png"></p><ul><li>直接回车</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/dd6beae917469.png" alt="G3Lb.png"><br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/019bce956087b.png" alt="GMWB.png"></p><p>3<img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/cb2bb156f5ef8.png" alt="G2Ql.png"></p><ul><li>执行之后等待完成。</li><li>拔掉u盘，重启电脑就可以了。</li></ul><h1 id="至此完结。"><a href="#至此完结。" class="headerlink" title="至此完结。"></a>至此完结。</h1><p>这只是比较重要的过程。更多详细期待后续更新。<br>如果有啥不懂可以在评论区问我，也可以加qq问</p><p>qq：3215395824</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑常识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>30包邮！傲腾加速机械-让机械硬盘飞起来(无需重装)</title>
+      <link href="/posts/366e.html"/>
+      <url>/posts/366e.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="傲腾是什么"><a href="#傲腾是什么" class="headerlink" title="傲腾是什么"></a>傲腾是什么</h1><ul><li><p>傲腾（Optane）的基本技术是基于3D Xpoint介质比3D NAND更快的存储介质，官方介绍Optane傲腾内存能够带来空前的响应速度：启动系统速度提升2倍，整体系统吞吐性能提升28%，游戏加载速度提升65%。</p></li><li><p>是一个介于固态和内存之间的玩意</p></li><li><p>是目前很有性价比的。（2019.6.16）</p></li><li><p>30 包邮 让你的机械变成 SATA固态一般的速度！！！</p></li></ul><h1 id="简单说一下我为什么要使用傲腾"><a href="#简单说一下我为什么要使用傲腾" class="headerlink" title="简单说一下我为什么要使用傲腾"></a>简单说一下我为什么要使用傲腾</h1><ul><li><p>首先我发现我打开游戏很慢。</p></li><li><p>淘宝上发现傲腾只要30包邮！！！ <strong>重点</strong></p></li><li><p>我的cpu是8代，主板是B360 G（使用傲腾的必要条件，最好是7代u 200系主板以上）</p></li><li><p>我的系统盘是 NVME的固态。</p></li><li><p>我要加速的 不是系统盘，是从盘。</p></li></ul><h1 id="我们先来看看傲腾长什么鸟样"><a href="#我们先来看看傲腾长什么鸟样" class="headerlink" title="我们先来看看傲腾长什么鸟样"></a>我们先来看看傲腾长什么鸟样</h1><p>正面<br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/48dc91872bbe9.jpg" alt="GV37.jpg"><br>背面</p><p>这个物流信息不要在意啦。</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/d25db5712ecb5.jpg" alt="GE1X.jpg"></p><h1 id="我们正式开始吧！"><a href="#我们正式开始吧！" class="headerlink" title="我们正式开始吧！"></a>我们正式开始吧！</h1><p>首先放一下加了傲腾的机械速度。这是加了傲腾的机械<br><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/0667f281db8c7.jpg" alt="GPbh.jpg"><br>这是我的阿斯加特固态二代。M2,NVME PICEX2.0</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/c9944125c7d88.jpg" alt="GOBf.jpg"></p><h2 id="首先你需要确认你的机器是否支持傲腾"><a href="#首先你需要确认你的机器是否支持傲腾" class="headerlink" title="首先你需要确认你的机器是否支持傲腾"></a>首先你需要确认你的机器是否支持傲腾</h2><ul><li>cpu是7代及以上</li><li>主板上有明确的只是傲腾的M.2接口 看图</li></ul><p>博主就是因为把傲腾装到了M1的接口上了。导致了一系列问题。</p><p>最好去看主板说明书，或者去下官方手册</p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/26455bf16c176.jpg" alt="eAb.jpg"></p><h2 id="确认过眼神，没毛病了之后"><a href="#确认过眼神，没毛病了之后" class="headerlink" title="确认过眼神，没毛病了之后"></a>确认过眼神，没毛病了之后</h2><ul><li><p>直接去intel官方下傲腾加速驱动（这一步很重要）</p></li><li><p>确认你要加速的硬盘格式为GPT 如果不是可以使用分区软件改为GUID.也就是GPT。并不会造成数据丢失</p></li><li><p>加速的硬盘需要有100M的。我这里推荐100M。的空闲空间。注意！！！ 是空闲空间。未分配的！！！ 不是分区</p></li><li><p>之后安装好驱动会重启。有些UEFI/BIOS会自动设置 驱动</p><p>   但有些没有怎么办。手动去改。如果系统崩溃。F8安全模式看能不能进。进去把驱动卸载重装。</p></li><li><p>重启</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps：如果不行的话只能重装系统。先放好傲腾，改好BIOS&#x2F;UEFI中的 傲腾相关（RTS&#x2F;intel）选项，再去重装。</span><br><span class="line"></span><br><span class="line">重装之后去装下驱动就行。</span><br><span class="line"></span><br><span class="line">此方法100%成功</span><br></pre></td></tr></table></figure><h2 id="重启之后稍微等待一下你就会看到"><a href="#重启之后稍微等待一下你就会看到" class="headerlink" title="重启之后稍微等待一下你就会看到"></a>重启之后稍微等待一下你就会看到</h2><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/e532b6993be09.jpg" alt="GGnu.jpg"></p><p>然后点启用就完事啦。</p><h1 id="需要注意的几点"><a href="#需要注意的几点" class="headerlink" title="需要注意的几点"></a>需要注意的几点</h1><hr><ul><li>加速的硬盘一定要GPT格式 MBR不支持</li><li>确认过你的电脑支持傲腾  主板/cpu（当然你用第三方软件/PCIE 转接M2，就略过这点）</li><li>确认过加速的硬盘有空闲/未分配空间（建议100M）</li><li>BIOS/UEFI 中 快速储存选项/RTS 、啥的 开启。  注意 要安装完驱动以后开。</li><li>关闭BIOS/UEFI中的CMS/兼容性 选项</li><li>关闭BIOS/UEFI的快速启动</li><li>必须是win 64位的系统。推荐win10.</li></ul><hr><p> 然后你就可以开始享受傲腾的加成啦。</p><p> 有问题可以在评论区讨论。欢迎大神们来补充，改正。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑常识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ASRD合集（包括所有第三方地图）</title>
+      <link href="/posts/edfd.html"/>
+      <url>/posts/edfd.html</url>
+      
+        <content type="html"><![CDATA[<p>更新于2020.3.5</p><h1 id="ASRD合集"><a href="#ASRD合集" class="headerlink" title="ASRD合集"></a>ASRD合集</h1><h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><ul><li><strong>可以去创意工坊——浏览——合集  搜索 第三方</strong></li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/03/19/c682d3110f39f.png" alt="1"></p><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/03/19/7de1b94b38217.png" alt="MCGSOESO2R788U_@2L_YHE7.png"></p><h3 id="地图合集"><a href="#地图合集" class="headerlink" title="地图合集"></a>地图合集</h3><p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1737009682" target="_blank" rel="noopener external nofollow noreferrer">https://steamcommunity.com/sharedfiles/filedetails/?id=1737009682</a></p><p>有个这个东西，麻麻再也不怕我进不去服务器了。</p><blockquote><p>包含所有兼容的第三方地图。总共有100张地图。<br>兼容服务器CN,xigua ,南方系列</p></blockquote><blockquote><p>对于配置较低的电脑。可能会出现进游戏无响应。这个时候你需要稍等一下就可以了。</p></blockquote><p>欢迎来订阅，评价，讨论。</p><h1 id="打不开页面的解决方法"><a href="#打不开页面的解决方法" class="headerlink" title="打不开页面的解决方法"></a><strong>打不开页面的解决方法</strong></h1><p>请前往<a href="https://www.dogfight360.com/blog/686/" target="_blank" rel="noopener external nofollow noreferrer">https://www.dogfight360.com/blog/686/</a></p><p>中寻找steamcommunity</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASRD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python 概述</title>
+      <link href="/posts/b557.html"/>
+      <url>/posts/b557.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python概述"><a href="#Python概述" class="headerlink" title="Python概述"></a>Python概述</h1><ul><li>计算机语言概述<ul><li>语言：交流的工具，沟通媒介</li><li>计算机语言：人跟计算机交流的工具，翻译官</li><li>Python是计算机语言里的一种</li><li>Python编程语言<ul><li>代码：人类语言，同过代码命令机器，跟机器交流</li><li>Python解释器： 就是那个担任翻译工作的二狗子同学</li><li>流程：<ul><li>写代码</li><li>执行：由翻译官（Python解释器）把命令（Code）翻译给机器，同事把机器结果翻译给我们</li></ul></li></ul></li><li>Python读音问题</li><li>Pythgon简史<ul><li>1989年， Guido van Rossum</li><li>2008： python3.0 诞生</li><li>2014： 宣布2.7支持到2020</li><li>2017： AI元年，Python崛起</li></ul></li><li>Python特点<ul><li>速度问题</li><li>python跟其他语言的选择问题</li></ul></li><li>Python的应用领域<ul><li>全能，但主攻方面是数据分析，机器学习，爬虫，web等</li><li>设计哲学：平衡发展，样样通，简洁明了</li></ul></li><li>Python为什么这么火<ul><li>会不会持续火</li><li>会</li></ul></li><li>环境问题<ul><li>anaconda+pycharm</li><li>python3.6</li></ul></li><li>环境<ul><li>学习环境<ul><li>直播课，录播课，书本</li><li>刘英的Python视频</li><li>小甲鱼的Python视频</li></ul></li><li>工作环境<ul><li>环境安装：<ul><li><a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener external nofollow noreferrer">https://www.anaconda.com/distribution/</a></li><li>pycharm自行搜索</li></ul></li></ul></li><li>操作系统<pre><code>- windows- Linux- MacOX</code></pre></li><li>软件环境：<ul><li>不使用Python解释器</li><li>使用anaconda3+pycharm代替</li><li>具体环境不作要求</li></ul></li></ul></li><li>Python的执行方式<ul><li>本质上Python是一堆命令的集合</li><li>执行过程是逐行执行，遇到问题即刻终止</li></ul></li><li><strong>python比java慢20倍 是不是比java差？</strong><ul><li>Python在 Web 开发、网页抓取、数学科学、数据分析、人工智能方面的应用非常广。</li><li>Java 主要为企业服务。而 JavaScript 则征服了 Web。</li><li>每种编程语言都有它的使用性、优点和缺点。</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo github pages 使用https</title>
+      <link href="/posts/d951.html"/>
+      <url>/posts/d951.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于hexo使用https"><a href="#关于hexo使用https" class="headerlink" title="关于hexo使用https"></a>关于hexo使用https</h1><ul><li><p>现在github已经会自动颁发ssl证书</p></li><li><p>支持自定义域名</p><h1 id="失败问题"><a href="#失败问题" class="headerlink" title="失败问题"></a>失败问题</h1></li><li><p>我的是域名解析商dnspod的A解析记录有问题</p></li><li><p>遇到问题去看github的官方帮助文档</p><h1 id="一般用https的流程流程"><a href="#一般用https的流程流程" class="headerlink" title="一般用https的流程流程"></a>一般用https的流程流程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">删除CNAME</span><br><span class="line"></span><br><span class="line">上传 部署 hexo d</span><br><span class="line"></span><br><span class="line">去dns解析商删除A记录</span><br><span class="line"></span><br><span class="line">添加A记录为官方帮助文档里的ip</span><br><span class="line"></span><br><span class="line">添加CNAME</span><br><span class="line"></span><br><span class="line">上传部署 hexo d</span><br><span class="line"></span><br><span class="line">项目设置里打开强制HTTPS</span><br></pre></td></tr></table></figure></li><li><p>记住你的blog中所有图片都需要为https。不可为http。</p></li><li><p>一般来说就可以了</p><h1 id="大招"><a href="#大招" class="headerlink" title="大招"></a>大招</h1><h3 id="大招-1"><a href="#大招-1" class="headerlink" title="大招"></a>大招</h3></li><li><p>去github官方社区问，或者反馈到官方，会有邮件回你具体是哪里的问题。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浅谈fastboot</title>
+      <link href="/posts/6c68.html"/>
+      <url>/posts/6c68.html</url>
+      
+        <content type="html"><![CDATA[<p>友情链接: 浅谈recovery - <a href="https://impdx.vip/2019/04/09/%E6%B5%85%E8%B0%88recovery/" target="_blank" rel="noopener external nofollow noreferrer">https://impdx.vip/2019/04/09/%E6%B5%85%E8%B0%88recovery/</a></p><p>欢迎各位来讨论，欢迎各位大神来纠错，给建议。客官觉得小的写的还行给个打赏呗</p><h1 id="fastboot是什么"><a href="#fastboot是什么" class="headerlink" title="fastboot是什么"></a>fastboot是什么</h1><blockquote><p>首先，fastboot是安卓刷机救砖的一种刷机模式。</p><p>fastboot俗称 <strong>引导模式</strong></p><p>比recovery更底层的一种刷机模式。</p><p>多为厂商定制售后工具刷机用</p><p>底层开发人员调试用</p></blockquote><h1 id="fastboot的用处"><a href="#fastboot的用处" class="headerlink" title="fastboot的用处"></a>fastboot的用处</h1><ul><li><p>fastboot可以刷入recovery</p></li><li><p>fastboot可以刷入系统</p></li><li><p>fastboot可以救砖</p></li><li><p>fastboot可以使用fastboot命令</p><h1 id="fastboot的命令-仅供参考"><a href="#fastboot的命令-仅供参考" class="headerlink" title="fastboot的命令 (仅供参考)"></a>fastboot的命令 (仅供参考)</h1><h2 id="命令汇总"><a href="#命令汇总" class="headerlink" title="命令汇总"></a>命令汇总</h2></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash bootloader u-boot.bin</span><br><span class="line"></span><br><span class="line">fastboot flash kernel uImage</span><br><span class="line"></span><br><span class="line">fastboot flash system system.img</span><br><span class="line"></span><br><span class="line">fastboot flash userdata userdata.img</span><br><span class="line"></span><br><span class="line">fastboot flash ramdisk ramdisk-uboot.img</span><br><span class="line"></span><br><span class="line">fastboot erase cache</span><br><span class="line"></span><br><span class="line">fastboot flash &#123;partition&#125;</span><br></pre></td></tr></table></figure><p>语法介绍：</p><blockquote><p>fastboot flash xxxx xxxx.img<br>{*.img}   例：fastboot flash boot boot.img</p><p>fastboot flashall  </p><p>注意：此命令会在当前目录中查找所有img文件，将这些img文件烧写到所有对应的分区中，并重新启动手机。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一次烧写boot，system，recovery分区：</span><br><span class="line"></span><br><span class="line">创建包含boot.img，system.img，recovery.img文件的zip包。</span><br><span class="line"></span><br><span class="line">执行：fastboot update &#123;*.zip&#125;</span><br></pre></td></tr></table></figure><p>比较少用到的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash splash1 烧写开机第一屏</span><br><span class="line"></span><br><span class="line">fastboot reboot    不烧写flash情况下调试</span><br><span class="line"></span><br><span class="line">fastboot boot uImage 或者u-boot.bin  不烧写flash情况下调试</span><br><span class="line"></span><br><span class="line">fastboot getver:version    查看版本号</span><br></pre></td></tr></table></figure><p>重启相关</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot-bootloader   重启到到bootloader</span><br></pre></td></tr></table></figure><p>清空分区相关</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">fastboot erase &#123;partition&#125;   清空分区   例：fastboot erase boot</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fastboot erase boot   清除boot分区</span><br><span class="line"></span><br><span class="line">fastboot erase system   清除system分区</span><br><span class="line"></span><br><span class="line">fastboot erase data     清除data分区</span><br><span class="line"></span><br><span class="line">fastboot erase cache      清除cache分区</span><br><span class="line"></span><br><span class="line">上面的命令也可以简化成一条命令</span><br><span class="line"></span><br><span class="line">fastboot erase system -w  清除所有分区</span><br></pre></td></tr></table></figure><p>获取基本信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fastboot getvar version:version-bootloader:version-baseband:product:serialno:secure</span><br><span class="line">  获取客户端(手机端)变量信息7 获取客户端(手机端)变量信息</span><br><span class="line"></span><br><span class="line">version 客户端支持的fastboot协议版本</span><br><span class="line"></span><br><span class="line">version-bootloader  Bootloader的版本号</span><br><span class="line"></span><br><span class="line">version-baseband    基带版本</span><br><span class="line"></span><br><span class="line">product             产品名称</span><br><span class="line"></span><br><span class="line">serialno             产品序列号</span><br><span class="line"></span><br><span class="line">secure              返回yes 表示在刷入时需要获取签名(签名需要厂商签名)</span><br></pre></td></tr></table></figure><h2 id="写入分区步骤以及命令"><a href="#写入分区步骤以及命令" class="headerlink" title="写入分区步骤以及命令"></a>写入分区步骤以及命令</h2><blockquote><p>adb devices——查看手机是否连接上</p><p>adb reboot bootloader——将手机重启到Fastboot模式</p><p>fastboot devices——查看Fastboot模式下连接的手机</p></blockquote><ul><li>几种分区写入如下：(例如：system.img刷入的分区电脑上具体的路径)</li></ul><blockquote><p>fastboot flash system system.img</p><p>fastboot flash boot boot.img</p><p>fastboot flash radio radio.img</p><p>…</p></blockquote><ul><li>fastboot reboot——Fastboot模式下重启手机</li></ul><h2 id="擦除分区命令"><a href="#擦除分区命令" class="headerlink" title="擦除分区命令"></a>擦除分区命令</h2><p>擦除分区前需要按照之前步骤走一遍，擦除会将该分区恢复到使用前状态</p><blockquote><p>fastboot erase system</p><p>fastboot erase boot</p><p>…</p></blockquote><h2 id="一般线刷操作流程"><a href="#一般线刷操作流程" class="headerlink" title="一般线刷操作流程"></a>一般线刷操作流程</h2><ul><li><p>准备工作</p><p>  首先需要准备好刷机包，可以是自己编译的，也可以是从别处拷贝的，但一定要确保刷机包适用于你的 Android 设备。然后解压刷机包，解压后我们可以得到 boot.img、recovery.img、system.img、bootloader 文件，正是这些文件构成了 Android 设备的系统。</p><p>  让设备进入 fastboot 环境。有 2 种方法：</p><pre><code>执行命令 adb  reboot  fastboot</code></pre><p>  或者</p><pre><code>同时按住 增加音量 和 电源 键开机。具体看机型操作</code></pre></li></ul><ul><li><p>命令执行流程</p><p>  在设备进入到 fastboot 环境后，根据需求执行下面的命令进行刷机：</p><p>  仅供参考，具体看机型以及ROM进行相关操作，请严格按照ROM作者教程来</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">fastboot  flashing  unlock    设备解锁，开始刷机</span><br><span class="line"></span><br><span class="line"> fastboot  flash  boot  boot.img    刷入 boot 分区。如果修改了 kernel 代码，则应该刷入此分区以生效</span><br><span class="line"></span><br><span class="line"> fastboot  flash  recovery  recovery.img  刷入 recovery 分区</span><br><span class="line"></span><br><span class="line"> fastboot  flash  system  system.img    刷入 system 分区。如果修改的代码会影响 out&#x2F;system&#x2F; 路径下生成的文件，则应该刷入此分区以生效</span><br><span class="line"></span><br><span class="line"> fastboot  flash  bootloader  bootloader     刷入 bootloader</span><br><span class="line"></span><br><span class="line"> fastboot  erase  frp   擦除 frp 分区，frp 即 Factory Reset Protection，用于防止用户信息在手机丢失后外泄</span><br><span class="line"></span><br><span class="line"> fastboot  flashing lock    设备上锁，刷机完毕（不是必须）</span><br><span class="line"></span><br><span class="line"> fastboot  continue    自动重启设备</span><br></pre></td></tr></table></figure><h1 id="fastboot-小秘密"><a href="#fastboot-小秘密" class="headerlink" title="fastboot 小秘密"></a>fastboot 小秘密</h1><ul><li><p>fastboot多为各大厂商的售后刷机工具所用(不包括有些厂商锁9008和mtk com)</p></li><li><p>fastboot一般用来救砖(指的是无法进入recovery和系统的情况下)</p></li><li><p>有些具有bl锁的机子fastboot可能无法刷入第三方镜像(img)</p></li><li><p>fastboot能进去你的机子99%都可以救回来</p></li><li><p>fastboot的权限仅次于9008/mtk com</p></li><li><p>fastboot无第三方。只有厂商定制。因为快速引导这个东西第三方也搞不出什么花样。。不像recovery这么多功能，他偏向于底层了。</p></li><li><p>个人认为fastboot比卡刷更安全，更可靠，也比recovery更稳定(有些recovery驱动不完美会导致有时候无法使用触屏等功能)</p></li><li><p>fastboot是个好东西</p></li><li><p>像奇兔，线刷宝大部分都是推送ROM到recovery中，用脚本进行卡刷。而不是用fastboot进行线刷。<strong><em>注意：是大部分</em></strong></p></li></ul><h1 id="fastboot总结"><a href="#fastboot总结" class="headerlink" title="fastboot总结"></a>fastboot总结</h1><blockquote><p>是比recovery更靠谱的底层刷机模式</p><p>比recovery权限更高</p><p>也可以调试用</p></blockquote><p>不明白可以dd回复哦。欢迎来blog里讨论 欢迎各位的建议或者是补充哦 <a href="https://impdx.vip" target="_blank" rel="noopener external nofollow noreferrer">https://impdx.vip</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浅谈recovery</title>
+      <link href="/posts/a6a6.html"/>
+      <url>/posts/a6a6.html</url>
+      
+        <content type="html"><![CDATA[<p>友情链接：浅谈fastboot <a href="https://impdx.vip/2019/04/10/%E6%B5%85%E8%B0%88fastboot/" target="_blank" rel="noopener external nofollow noreferrer">https://impdx.vip/2019/04/10/%E6%B5%85%E8%B0%88fastboot/</a></p><h1 id="recovery是什么"><a href="#recovery是什么" class="headerlink" title="recovery是什么"></a>recovery是什么</h1><blockquote><p>recovery 是安卓的一种刷机模式，其实在linux中也存在这种模式。 俗称恢复模式</p><p>recovery 这种刷机模式的诞生主要的作用是不用连接电脑进行升级，刷机等操作。</p><p>理论上来说当你手机进不去系统是可以进入recovery下恢复手机。</p></blockquote><ul><li>简称为rec，很多小伙伴在学习刷机的过程中会看到这个词。</li><li>在安卓中，一般存在三种方式的刷机，<ul><li>recovery  恢复模式</li><li>fastboot  引导模式</li><li>高通 9008或MTK COM  端口<blockquote><p>从顺序上来说9008或mtk com是权限最大的，可以刷入fastboot以及recovery，系统<br>fastboot可以刷入recovery，以及系统<br>而recovery可以刷入系统。以及各种卡刷包，补丁包</p></blockquote></li></ul></li></ul><h1 id="官方recovery的作用"><a href="#官方recovery的作用" class="headerlink" title="官方recovery的作用"></a>官方recovery的作用</h1><ul><li>重置手机</li><li>清楚数据及其缓存</li><li>升级系统，卡刷官方升级包</li><li>重启</li></ul><h1 id="第三方recovery"><a href="#第三方recovery" class="headerlink" title="第三方recovery"></a>第三方recovery</h1><blockquote><p>首先我们需要了解recovery是有官方以及第三方</p></blockquote><blockquote><p>官方的recovery功能较少，而第三方功能丰富。</p></blockquote><ul><li><p>卡刷任何非官方卡刷包</p></li><li><p>清除(格式化) dalvik/ART cache,system,data,storage,cache,usb-otg</p></li><li><p>挂载任意一个分区</p></li><li><p>adb 命令</p></li><li><p>刷入img镜像文件</p></li><li><p>备份现有系统或分区(仅限TWRP)</p></li><li><p>还原备份</p></li><li><p>TWRP高级功能，ADB sideload，file manager</p><blockquote><p>第三方recovery分为twrp，CWM。</p></blockquote><blockquote><p>现在基本是TWRP，CWM是在4.x的时代的。</p></blockquote><h1 id="recovery的编译。后期会出recovery的编译教程。以及移植教程"><a href="#recovery的编译。后期会出recovery的编译教程。以及移植教程" class="headerlink" title="recovery的编译。后期会出recovery的编译教程。以及移植教程"></a>recovery的编译。后期会出recovery的编译教程。以及移植教程</h1><h1 id="recovery怎么刷入"><a href="#recovery怎么刷入" class="headerlink" title="recovery怎么刷入"></a>recovery怎么刷入</h1><ul><li>fastboot中刷入</li><li>9008或者MTK DAS刷入</li><li>系统获取root权限后使用一些软件刷入。</li></ul><blockquote><p>有什么问题可以在评论区讨论。欢迎大神们来纠正错误。</p></blockquote><p>友情链接：<a href="https://www.impdx.vip">https://www.impdx.vip</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ncm转mp3小工具</title>
+      <link href="/posts/80cb.html"/>
+      <url>/posts/80cb.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="ncm转mp3小工具"><a href="#ncm转mp3小工具" class="headerlink" title="ncm转mp3小工具"></a>ncm转mp3小工具</h1><p>链接：<a href="https://pan.baidu.com/s/11pQiCsde1l1-7WXGHx4ROg" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/11pQiCsde1l1-7WXGHx4ROg</a></p><p>提取码：5e6j</p><ul><li>食用方法：下载好打开软件。拖入ncm文件，点开始转换，选择目录<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2cf821.jpg" alt="x"></li><li>完成</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cools1 c105 救砖文件</title>
+      <link href="/posts/177a.html"/>
+      <url>/posts/177a.html</url>
+      
+        <content type="html"><![CDATA[<p>链接：<a href="https://pan.baidu.com/s/1S6EltBL-HvaXgFpGHmzK9Q" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1S6EltBL-HvaXgFpGHmzK9Q</a><br>提取码：j3jg</p><h1 id="操作说明。"><a href="#操作说明。" class="headerlink" title="操作说明。"></a>操作说明。</h1><ul><li>使用flshone刷入乐视pro3的9008后无法正常开机</li><li>但是可以进入fastboot模式</li><li>在fastboot模式中使用oneflash的fastboot刷入c105 原厂包</li></ul><ul><li>可以使用qpst救砖。但存在问题，下文中会说明</li></ul><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul><li><p>关于900E转9008 我使用的是工程线 具体步骤如下</p><blockquote><p>900e的情况下，按住电源键一直按住，同时一直让工程线短接。大概20s或者10s左右。<br>900e成功变成9008</p></blockquote></li><li><p>关于900E</p><blockquote><p>其实是没有完全关机所导致的，所以你也可以抠电池解决。</p></blockquote></li><li><p>关于短接说明</p><blockquote><p>我这里是推荐各位使用工程线的</p><p>当然也可以使用镊子短接主板，主板短接位置是在电池排线下边两个小金属点。</p></blockquote></li><li><p>此机型进入9008方式</p><blockquote><p>按住音量- 插入数据线(关机情况下)</p><p>关机情况下按住电源+短接，重启自动进入9008</p></blockquote></li><li><p>qpst救砖会导致分区缺少3g</p><blockquote><p>也就是说你的机子使用qpst可能会少3g容量的储存空间，</p><p>有修复补丁包。可以参考ydss的帖子。</p></blockquote></li><li><p>实测qpst救砖成功率比oneflash高</p></li><li><p>关于qpst缺少mbn文件可以从zl1(乐pro3)的救砖包中提取。</p></li></ul><h1 id="此机型有设计缺陷-包括pro3"><a href="#此机型有设计缺陷-包括pro3" class="headerlink" title="此机型有设计缺陷 包括pro3"></a>此机型有设计缺陷 包括pro3</h1><ul><li>存在cpu虚焊的可能性。</li><li>存在小板快充失灵的可能性</li><li>呼吸灯蓝色常亮无法进入任何模式的黑屏状态，一般是救不回来的。可以换字库解决。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 救砖 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>x20 改全网教程</title>
+      <link href="/posts/7fe4.html"/>
+      <url>/posts/7fe4.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="x20改全网教程"><a href="#x20改全网教程" class="headerlink" title="x20改全网教程"></a>x20改全网教程</h1><h2 id="进入9008"><a href="#进入9008" class="headerlink" title="进入9008"></a>进入9008</h2><ul><li>关机情况下，按住音量+-，一起按，然后插上数据线。</li><li>不出意外出现了9008端口</li></ul><h2 id="猎人维修大师-一键改全网。"><a href="#猎人维修大师-一键改全网。" class="headerlink" title="猎人维修大师 一键改全网。"></a>猎人维修大师 一键改全网。</h2><ul><li>这图片是给一个客户改的时候，实测xp也可以改(建议win7和win10)，选好型号点开始就行</li><li>完成以后需要清除所有数据。流程如下- 设置 - 备份与重置 - 清除所有数据。<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2e8d28.jpg" alt="x"><br><img src= "/img/loading.gif" data-lazy-src="https://wx2.sinaimg.cn/large/007G0IU0ly1g1szvs1ymhj30jt0j410r.jpg" alt="x"></li></ul><h2 id="关于端口识别不出"><a href="#关于端口识别不出" class="headerlink" title="关于端口识别不出"></a>关于端口识别不出</h2><ul><li>确认驱动装好以后，手动输入，比如COM8 就直接输入COM8</li><li>笔记本以及台式使用typec拓展坞(集线器，之类的)，会导致端口打开失败</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 维修手机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>猎人维修大师安装共享</title>
+      <link href="/posts/bee3.html"/>
+      <url>/posts/bee3.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>视频教程<br>链接：<a href="https://pan.baidu.com/s/1XqxD8eL5xP3VI8LdZsJ5Qw" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1XqxD8eL5xP3VI8LdZsJ5Qw</a> 提取码：u6ld</li><li>记得认准闲鱼号：未知的常数</li><li>软件下载地址： <a href="http://pan.baidu.com/s/1i496HCT" target="_blank" rel="noopener external nofollow noreferrer">http://pan.baidu.com/s/1i496HCT</a> 官网地址 <a href="http://bbs.lrdzt.com/forum.php" target="_blank" rel="noopener external nofollow noreferrer">http://bbs.lrdzt.com/forum.php</a></li></ul><h1 id="下载软件安装包以及工具"><a href="#下载软件安装包以及工具" class="headerlink" title="下载软件安装包以及工具"></a>下载软件安装包以及工具</h1><blockquote><p>首先需要下载破解版百度云</p></blockquote><ul><li>如果是大牛也可以自己抓链接配置aira2.</li><li>小白建议安装<a href="http://pandownload.com" target="_blank" rel="noopener external nofollow noreferrer">pandownload</a>（可点击），<a href="https://www.speedpan.com/" target="_blank" rel="noopener external nofollow noreferrer">速盘</a>（可点击）</li></ul><h2 id="下载猎人维修大师安装包"><a href="#下载猎人维修大师安装包" class="headerlink" title="下载猎人维修大师安装包"></a>下载猎人维修大师安装包</h2><blockquote><p><a href="http://bbs.lrdzt.com/forum.php" target="_blank" rel="noopener external nofollow noreferrer">官网链接</a>（可点击）</p></blockquote><ul><li>下载中心里，需要下载<img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620d4e46f0.jpg" alt="x"><blockquote><blockquote><ul><li>主控<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2c7698.jpg" alt="x"></li><li>共享工具</li><li>辅助工具<img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620d4ee320.jpg" alt="x"></li><li>驱动<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2e98e8.jpg" alt="x"></li></ul></blockquote></blockquote></li></ul><h1 id="安装猎人维修大师，不多说了，之间双击安装好叭"><a href="#安装猎人维修大师，不多说了，之间双击安装好叭" class="headerlink" title="安装猎人维修大师，不多说了，之间双击安装好叭"></a>安装猎人维修大师，不多说了，之间双击安装好叭</h1><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2a5777.jpg" alt="x"><br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2cef2a.jpg" alt="x"></p><h1 id="安装驱动"><a href="#安装驱动" class="headerlink" title="安装驱动"></a>安装驱动</h1><h2 id="这里需要-注意一下，你需要禁用驱动程序强制签名。"><a href="#这里需要-注意一下，你需要禁用驱动程序强制签名。" class="headerlink" title="这里需要 注意一下，你需要禁用驱动程序强制签名。"></a>这里需要 注意一下，你需要禁用驱动程序强制签名。</h2><blockquote><p>操作方法</p></blockquote><ul><li>win7 开机跳过 BIOS动画后 狂按F8，然后看说明一般是按7</li><li>win10 系统更新里有个恢复设置，高级启动，疑难解答，更多恢复选项，启动设置，然后按7（一般是按7，看说明）</li></ul><h2 id="安装MTK驱动，安装高通驱动，安装华为驱动"><a href="#安装MTK驱动，安装高通驱动，安装华为驱动" class="headerlink" title="安装MTK驱动，安装高通驱动，安装华为驱动"></a>安装MTK驱动，安装高通驱动，安装华为驱动</h2><h3 id="一键安装，中间弹出框框选择-始终安装"><a href="#一键安装，中间弹出框框选择-始终安装" class="headerlink" title="一键安装，中间弹出框框选择 始终安装"></a><strong>一键安装，中间弹出框框选择 始终安装</strong></h3><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2c5016.jpg" alt="驱动"></p><h1 id="安装USB-Redirector-Client客户端"><a href="#安装USB-Redirector-Client客户端" class="headerlink" title="安装USB Redirector Client客户端"></a>安装USB Redirector Client客户端</h1><ul><li>安装好以后打开如图</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2e32df.jpg" alt="USB Redirector Client"></p><ul><li>点左上角的+号图标会显示</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620c2a5ec9.jpg" alt="add usb"></p><ul><li>填写好以后就会出现</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/05/11/5cd620d514642.jpg" alt="ok"></p><h1 id="接下来你就可以愉快的使用猎人维修大师了"><a href="#接下来你就可以愉快的使用猎人维修大师了" class="headerlink" title="接下来你就可以愉快的使用猎人维修大师了"></a><strong>接下来你就可以愉快的使用猎人维修大师了</strong></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 维修手机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>continue,pass for python </title>
+      <link href="/posts/d577.html"/>
+      <url>/posts/d577.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>break 语句跳出整个循环体。没啥好讲的。就像把你的程序中断了一样</li><li>pass 语句是空，占位用的。为了保持程序结构完整性。pass不做任何事情，只是用来占个位置。不做任何事情！！！</li><li>continue 跳出本次循环，进行下一次循环。</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># continue语句练习</span><br><span class="line"># 在数字1-10中，寻找所有偶数，找到偶数后打印偶数</span><br><span class="line">dig_list &#x3D; [1,2,3,4,5,6,7,8,9,10]</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">for dig in dig_list:</span><br><span class="line">    if dig % 2 &#x3D;&#x3D; 0:</span><br><span class="line">        print(dig)</span><br><span class="line">        print(&quot;呵呵，你就是个双&quot;)</span><br><span class="line">    else:</span><br><span class="line">        continue</span><br></pre></td></tr></table></figure><ul><li>continue跳出本次循环</li><li>当循环或判断执行到continue语句的时候，continue后的语句将不会执行。会跳出当次循环，继续循环中的下一次循环。<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">呵呵，你就是个双</span><br><span class="line">4</span><br><span class="line">呵呵，你就是个双</span><br><span class="line">6</span><br><span class="line">呵呵，你就是个双</span><br><span class="line">8</span><br><span class="line">呵呵，你就是个双</span><br><span class="line">10</span><br><span class="line">呵呵，你就是个双</span><br></pre></td></tr></table></figure><h3 id="pass案例"><a href="#pass案例" class="headerlink" title="pass案例"></a>pass案例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># pass 案例</span><br><span class="line"></span><br><span class="line">age &#x3D; 19</span><br><span class="line">if age &gt; 19:</span><br><span class="line">    pass</span><br><span class="line">else:</span><br><span class="line">    print(&quot;你还小&quot;)</span><br></pre></td></tr></table></figure><h2 id="小甲鱼练习"><a href="#小甲鱼练习" class="headerlink" title="小甲鱼练习"></a>小甲鱼练习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 猜数字案例</span><br><span class="line">import random</span><br><span class="line">secret &#x3D; random.randint(1,10)</span><br><span class="line">temp &#x3D; input(&quot;不妨猜想一下数字：&quot;)</span><br><span class="line">guess &#x3D; int(temp)</span><br><span class="line"></span><br><span class="line">while guess !&#x3D; secret:</span><br><span class="line">    temp &#x3D; input(&quot;猜错了，重新输入吧：&quot;)</span><br><span class="line">    guess &#x3D; int(temp)</span><br><span class="line">    if guess &gt; secret:</span><br><span class="line">        print(&quot;哥，大了&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;哥，小了&quot;)</span><br><span class="line"></span><br><span class="line">    if guess &#x3D;&#x3D; secret:</span><br><span class="line">        print(&quot;哎呀你是小甲鱼的蛔虫么。&quot;)</span><br><span class="line">        print(&quot;就算猜中了！也没有奖励，哼！&quot;)</span><br><span class="line"></span><br><span class="line">        print(&quot;游戏结束，不玩啦&quot;)</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ASRD服务器建设 (小白版)</title>
+      <link href="/posts/9639.html"/>
+      <url>/posts/9639.html</url>
+      
+        <content type="html"><![CDATA[<p>本文更新于2020/2/29</p><ul><li>2020-3-13 去除 sv_forcepreload 1 负优化选项，增加T3workshop.cfg文件。<h1 id="ASRD服务器建设"><a href="#ASRD服务器建设" class="headerlink" title="ASRD服务器建设"></a>ASRD服务器建设</h1></li><li>链接：<a href="https://wwa.lanzous.com/i06rNor2b9i" target="_blank" rel="noopener external nofollow noreferrer">https://wwa.lanzous.com/i06rNor2b9i</a></li></ul><h3 id="安装目录"><a href="#安装目录" class="headerlink" title="安装目录"></a>安装目录</h3><p>建议直接将game文件夹放D盘目录.内部结构都对应好了.<br>D:\T3\asrd\rd1<br>D:\T3\asrd\steamcmd\</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>1,执行 D:\game\asrd\rd1\StartRD1.bat  (如果不是按我前面提示的目录放的,那么需要先编辑这个文件)<br>2,会自动下载更新游戏.<br>3,游戏下载完会自动运行SRCDS.exe ,这个就是服务器主进程,关闭SRCDS.exe,也就是关闭服务器.<br>4,将我提供的game\asrd\rd1\reactivedrop_游戏下载后再将里面文件覆盖\   这个文件夹里面的内容直接覆盖对应的文件.<br>5,再次执行 D:\game\asrd\rd1\StartRD1.bat 会自动下载mod并运行服务器</p><h3 id="bat部分"><a href="#bat部分" class="headerlink" title="bat部分"></a>bat部分</h3><blockquote><pre><code> 11title srcds ReactiveDrop2 cmd    窗口运行标题..\steamcmd\steamcmd +login anonymous      登录匿名账户（steamcmd）D:\game1\asrd\rd1\asrd\rd1     启动目录+app_update 563560    自动更新游戏文件+quitecho (%time%) srcds started.con_logfile &quot;console2.log&quot; 连接日志记录文件-maxplayers 16 最大游戏人数+exec server2.cfg  默认server配置文件+hostname &quot;[CN]T2_No third-party maps&quot; 服务器名称</code></pre></blockquote><h3 id="自定义部分"><a href="#自定义部分" class="headerlink" title="自定义部分"></a>自定义部分</h3><blockquote><pre><code>编辑配置文件,请使用NOTEPAD++ 或者ATOM 或者 UE之类支持UTF-8的软件编辑,请不要系统自带记事本.</code></pre></blockquote><h3 id="服务器名称-人数上限"><a href="#服务器名称-人数上限" class="headerlink" title="服务器名称/人数上限"></a>服务器名称/人数上限</h3><blockquote><pre><code> 编辑D:\game\asrd\rd1\StartRD1.bat-maxplayers 10  人数+hostname  服务器名称,用引号包起来.名称的话 windows服务器是支持中文 如果linux 用wine可以参考    https://steamcommunity.com/sharedfiles/filedetails/?id=862024047</code></pre></blockquote><h3 id="服务器高级设置"><a href="#服务器高级设置" class="headerlink" title="服务器高级设置"></a>服务器高级设置</h3><blockquote><pre><code> 编辑 D:\game\asrd\rd1\reactivedrop\cfg\server.cfghostport 27015 就是端口 自己记得在防火墙或者阿里云之类VPS控制面板开启安全端口rcon_password &quot;21ed&quot;  请自己修改这个,这个好像别人可以远程控制你服务器...请设置一个特别复杂的密码,自己不用知道,脸滚键盘,随便打.sv_steamgroup &quot;33579655&quot; steam组ID   33579655对应南方杀手创建的steam组(加入此组的用户可以在游戏打开的时候直接看到你的服务器,另外这里有服务器管理教程.)</code></pre></blockquote><h3 id="关于公网ip的使用方法"><a href="#关于公网ip的使用方法" class="headerlink" title="关于公网ip的使用方法"></a>关于公网ip的使用方法</h3><p>首先要确认你拥有公网ip。</p><blockquote><pre><code> 需要登录路由器管理界面，具体地址在路由器下放会明确标写以及默认用户名账户举个例子比如我用的tplink的路由器 192.168.1.1 查看WAN口的状态里边有ipv4的地址 然后去百度直接搜 ip 两个ip不一样那么你就是私网ip。关闭路由器的防火墙，以及服务器的防火墙路由器中端口映射服务器开启 游戏端口在sever.cfg配置文件中有 默认27015端口映射如果没用可以用dmz主机进行测试，测试后务必关闭dmz。</code></pre></blockquote><h3 id="如果没有公网ip怎么开服务器"><a href="#如果没有公网ip怎么开服务器" class="headerlink" title="如果没有公网ip怎么开服务器"></a>如果没有公网ip怎么开服务器</h3><p>如果没有公网ip，那么你又想开服务器，</p><blockquote><pre><code> 云服务器内网穿透找运营商去索要公网ip</code></pre></blockquote><h3 id="MOD-使用"><a href="#MOD-使用" class="headerlink" title="MOD 使用"></a>MOD 使用</h3><p>编辑</p><blockquote><pre><code>D:\game\asrd\rd1\reactivedrop\cfg\workshop.cfg ID对应创意工坊的ID 861497042 对应  https://steamcommunity.com/sharedfiles/filedetails/?id=861497042</code></pre></blockquote><p>增加 T3 workshop.cfg文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">rd_enable_workshop_item 1112385907  &#x2F;&#x2F;4Fun Challenges</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 958657887   &#x2F;&#x2F;鼠标变成指示,单机mod</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 856769698   &#x2F;&#x2F;Bright Parasite 寄生虫高亮补丁 ,单机</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 910871185   &#x2F;&#x2F;Custom HUD  显示8个队友信息, 单机</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1431524375  &#x2F;&#x2F;炸弹粒子</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1435789516  &#x2F;&#x2F;足球</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rd_enable_workshop_item 920595874     &#x2F;&#x2F;Aliens Drop Loot</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 936916506     &#x2F;&#x2F;ASBI BackFire</span><br><span class="line">rd_enable_workshop_item 1167497265    &#x2F;&#x2F;ASBI Tier 1</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 936914699    &#x2F;&#x2F;BackFire</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 942528430    &#x2F;&#x2F;Backfire Energy Weapons Onslaught</span><br><span class="line">rd_enable_workshop_item 1599446224&#x2F;&#x2F;AsSBI P 挑战</span><br><span class="line">rd_enable_workshop_item 1584605820&#x2F;&#x2F;无asbi的p挑战</span><br><span class="line">rd_enable_workshop_item 1176332590    &#x2F;&#x2F;No Flamer BackFire</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1104834692    &#x2F;&#x2F;OnFire BackFire Challenges</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rd_enable_workshop_item 1204441372  &#x2F;&#x2F;SCAVENGER 11.1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2020 02.19</span><br><span class="line">rd_enable_workshop_item 1969483202 &#x2F;&#x2F;冰Ice Age</span><br><span class="line">rd_enable_workshop_item 1846586064 &#x2F;&#x2F;give me the power</span><br><span class="line">rd_enable_workshop_item 1933311549 &#x2F;&#x2F;4fun+give me the power</span><br><span class="line">rd_enable_workshop_item 1337125963 &#x2F;&#x2F;Power-Up Rifle Mod步枪加电和自定义外星人选择带来的挑战集合。猛攻开启</span><br><span class="line">rd_enable_workshop_item 1365831405 &#x2F;&#x2F;New Level One Challenger从一级添加更多武器和物品------d等</span><br><span class="line">rd_enable_workshop_item 910875846 &#x2F;&#x2F;更多武器 More Starting Equipment</span><br><span class="line">rd_enable_workshop_item 1663821856 &#x2F;&#x2F;Hold the door 打怪产生门</span><br><span class="line">&#x2F;&#x2F; 所有地图 更新于2020.3.5</span><br><span class="line">rd_enable_workshop_item 2013209534</span><br><span class="line">rd_enable_workshop_item 1973725602</span><br><span class="line">rd_enable_workshop_item 1614683161</span><br><span class="line">rd_enable_workshop_item 922535233</span><br><span class="line">rd_enable_workshop_item 912495756</span><br><span class="line">rd_enable_workshop_item 1206252032</span><br><span class="line">rd_enable_workshop_item 861497042</span><br><span class="line">rd_enable_workshop_item 918258674</span><br><span class="line">rd_enable_workshop_item 915825188</span><br><span class="line">rd_enable_workshop_item 914071790</span><br><span class="line">rd_enable_workshop_item 909702841</span><br><span class="line">rd_enable_workshop_item 1093180806</span><br><span class="line">rd_enable_workshop_item 908169099</span><br><span class="line">rd_enable_workshop_item 1550139489</span><br><span class="line">rd_enable_workshop_item 1528228467</span><br><span class="line">rd_enable_workshop_item 848260335</span><br><span class="line">rd_enable_workshop_item 1118193931</span><br><span class="line">rd_enable_workshop_item 902578057</span><br><span class="line">rd_enable_workshop_item 936675978</span><br><span class="line">rd_enable_workshop_item 880002363</span><br><span class="line">rd_enable_workshop_item 888540730</span><br><span class="line">rd_enable_workshop_item 1091586526</span><br><span class="line">rd_enable_workshop_item 910004286</span><br><span class="line">rd_enable_workshop_item 856807495</span><br><span class="line">rd_enable_workshop_item 848935191</span><br><span class="line">rd_enable_workshop_item 1435789516</span><br><span class="line">rd_enable_workshop_item 918505277</span><br><span class="line">rd_enable_workshop_item 921199337</span><br><span class="line">rd_enable_workshop_item 899642699</span><br><span class="line">rd_enable_workshop_item 1557516502</span><br><span class="line">rd_enable_workshop_item 926408225</span><br><span class="line">rd_enable_workshop_item 913021935</span><br><span class="line">rd_enable_workshop_item 915370759</span><br><span class="line">rd_enable_workshop_item 1566109639</span><br><span class="line">rd_enable_workshop_item 848331447</span><br><span class="line">rd_enable_workshop_item 912403124</span><br><span class="line">rd_enable_workshop_item 1552568795</span><br><span class="line">rd_enable_workshop_item 1539163254</span><br><span class="line">rd_enable_workshop_item 1551965583</span><br><span class="line">rd_enable_workshop_item 1519884777</span><br><span class="line">rd_enable_workshop_item 1237706276</span><br><span class="line">rd_enable_workshop_item 1139612462</span><br><span class="line">rd_enable_workshop_item 913650485</span><br><span class="line">rd_enable_workshop_item 936685990</span><br><span class="line">rd_enable_workshop_item 912295353</span><br><span class="line">rd_enable_workshop_item 918461785</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 922487973 &#x2F;&#x2F;Jacob&#39;s Rest Practice</span><br><span class="line">rd_enable_workshop_item 935577904</span><br><span class="line">rd_enable_workshop_item 930171604</span><br><span class="line">rd_enable_workshop_item 912391147</span><br><span class="line">rd_enable_workshop_item 1137665830</span><br><span class="line">rd_enable_workshop_item 912200251</span><br><span class="line">rd_enable_workshop_item 1742966456</span><br><span class="line">rd_enable_workshop_item 916055799</span><br><span class="line">rd_enable_workshop_item 936758385</span><br><span class="line">rd_enable_workshop_item 936092737</span><br><span class="line">rd_enable_workshop_item 936101427</span><br><span class="line">rd_enable_workshop_item 923212897</span><br><span class="line">rd_enable_workshop_item 1559750537</span><br><span class="line">rd_enable_workshop_item 911647482</span><br><span class="line">rd_enable_workshop_item 1259154538</span><br><span class="line">rd_enable_workshop_item 914421802</span><br><span class="line">rd_enable_workshop_item 1313628775</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 935639233 &#x2F;&#x2F;Zoidberg Reactor Campaign</span><br><span class="line">rd_enable_workshop_item 1312255876</span><br><span class="line">rd_enable_workshop_item 1121225033</span><br><span class="line">rd_enable_workshop_item 872381076</span><br><span class="line">rd_enable_workshop_item 943623443</span><br><span class="line">rd_enable_workshop_item 915564134</span><br><span class="line">rd_enable_workshop_item 936751209</span><br><span class="line">rd_enable_workshop_item 1337885195</span><br><span class="line">rd_enable_workshop_item 957780766</span><br><span class="line">rd_enable_workshop_item 935487339</span><br><span class="line">rd_enable_workshop_item 911490837</span><br><span class="line">rd_enable_workshop_item 1626396865</span><br><span class="line">rd_enable_workshop_item 896151542</span><br><span class="line">rd_enable_workshop_item 1636064547</span><br><span class="line">rd_enable_workshop_item 951153486</span><br><span class="line">rd_enable_workshop_item 912382267</span><br><span class="line">rd_enable_workshop_item 916097064</span><br><span class="line">rd_enable_workshop_item 947665763</span><br><span class="line">rd_enable_workshop_item 910275735</span><br><span class="line">rd_enable_workshop_item 1109961848</span><br><span class="line">rd_enable_workshop_item 1119808306</span><br><span class="line">rd_enable_workshop_item 935549703</span><br><span class="line">rd_enable_workshop_item 931391928</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1795328721</span><br><span class="line">rd_enable_workshop_item 1384208753</span><br><span class="line">rd_enable_workshop_item 1773700907</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1787511404</span><br><span class="line">rd_enable_workshop_item 1110701441</span><br><span class="line">rd_enable_workshop_item 931330279</span><br><span class="line">rd_enable_workshop_item 1417813936</span><br><span class="line">rd_enable_workshop_item 940245258</span><br><span class="line">rd_enable_workshop_item 922334923</span><br><span class="line">rd_enable_workshop_item 1352547848</span><br><span class="line">rd_enable_workshop_item 912372077</span><br><span class="line">rd_enable_workshop_item 1897488567</span><br><span class="line">rd_enable_workshop_item 1897276227</span><br><span class="line">rd_enable_workshop_item 1632619654</span><br><span class="line">rd_enable_workshop_item 1737542240</span><br><span class="line">rd_enable_workshop_item 1890426486</span><br><span class="line">rd_enable_workshop_item 1666494339</span><br><span class="line">rd_enable_workshop_item 1528716585</span><br><span class="line">rd_enable_workshop_item 909991842</span><br><span class="line">rd_enable_workshop_item 1755027141</span><br><span class="line">rd_enable_workshop_item 1139381252</span><br><span class="line">rd_enable_workshop_item 1116080348</span><br><span class="line">rd_enable_workshop_item 914418286</span><br><span class="line">rd_enable_workshop_item 1896506941</span><br><span class="line">rd_enable_workshop_item 1822739548</span><br><span class="line">rd_enable_workshop_item 1589215389</span><br><span class="line">rd_enable_workshop_item 1782790265</span><br><span class="line">rd_enable_workshop_item 1648879226</span><br><span class="line">rd_enable_workshop_item 1489254161</span><br><span class="line">rd_enable_workshop_item 1963113575</span><br><span class="line">rd_enable_workshop_item 1820128803</span><br><span class="line">rd_enable_workshop_item 1601467010</span><br><span class="line">rd_enable_workshop_item 1137756817</span><br><span class="line">rd_enable_workshop_item 934871104</span><br><span class="line">rd_enable_workshop_item 920352412</span><br><span class="line">rd_enable_workshop_item 1756515767</span><br><span class="line">rd_enable_workshop_item 2004993840</span><br><span class="line">rd_enable_workshop_item 1287920225</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2020-3-10 challenge</span><br><span class="line">&#x2F;&#x2F;rd_enable_workshop_item 1833578091 &#x2F;&#x2F;Funplayers Mod</span><br><span class="line">rd_enable_workshop_item 1662513411 &#x2F;&#x2F;Full Moon Speed Freak</span><br><span class="line">rd_enable_workshop_item 1831775391 &#x2F;&#x2F;Boomer Party!</span><br><span class="line">rd_enable_workshop_item 1849007337 &#x2F;&#x2F;血条</span><br><span class="line">rd_enable_workshop_item 1918010674 &#x2F;&#x2F;Power of Despair</span><br><span class="line">rd_enable_workshop_item 2004834354 &#x2F;&#x2F;You Are Spy</span><br><span class="line">rd_enable_workshop_item 943658947 &#x2F;&#x2F;突击步枪万岁</span><br><span class="line">rd_enable_workshop_item 1716572480 &#x2F;&#x2F;Bouncing Betty</span><br><span class="line">rd_enable_workshop_item 1336339476 &#x2F;&#x2F;Death Ray死亡激光。</span><br><span class="line">rd_enable_workshop_item 1192819294 &#x2F;&#x2F;第一人称</span><br><span class="line">rd_enable_workshop_item 927864921 &#x2F;&#x2F;医疗挑战Medical Research - Challenge</span><br></pre></td></tr></table></figure><h3 id="管理员名单"><a href="#管理员名单" class="headerlink" title="管理员名单"></a>管理员名单</h3><p>编辑</p><blockquote><pre><code> D:\game\asrd\rd1\reactivedrop\addons\sourcemod\configs\admins.cfg其中STEAM_1:1:123779401 是我自己的,可以在游戏控制台使用命令status获得(自己).也可以在游戏日志中获得(其他人)补充已知bug 如果管理员ID重复，会造成服务器不定时重启</code></pre></blockquote><h3 id="服务器公告"><a href="#服务器公告" class="headerlink" title="服务器公告"></a>服务器公告</h3><p>编辑</p><blockquote><pre><code> D:\game\asrd\rd1\reactivedrop\addons\sourcemod\configs\Advertisements.txtWINDOWS服务器支持中文,注意保持文件格式(UTF-8 无bom)  linux不清楚中文支持情况.</code></pre></blockquote><h3 id="服务器保留人数"><a href="#服务器保留人数" class="headerlink" title="服务器保留人数"></a>服务器保留人数</h3><blockquote><pre><code>公告播放间隔 \ 服务器保留位置 (比如我的服务器是10人服务器,8个正常位置,2个保留位置)</code></pre><p>编辑</p></blockquote><blockquote><pre><code> D:\game\asrd\rd1\reactivedrop\cfg\sourcemod\sourcemod.cfgsm_advertisements_interval 60   公告间隔,单位秒sm_reserved_slots 2    保留人数2</code></pre></blockquote><p>服务器管理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">1,查看用户信息:包括 国家,IP,steam ID , user ID</span><br><span class="line">命令sm_users</span><br><span class="line">用法就是直接输入这个指令回车即可.</span><br><span class="line"></span><br><span class="line">特别注意user id</span><br><span class="line">user id 是每个人进入该服务器自动分配的数字,而且每次进入都会不一样.</span><br><span class="line">下面其他命令都和这个user id 有关系</span><br><span class="line">比如我的userid 为4</span><br><span class="line"></span><br><span class="line">2,设置某人准备&#x2F;取消准备</span><br><span class="line">命令</span><br><span class="line">sm_setready</span><br><span class="line">用法</span><br><span class="line">sm_setready [1|0] [#userid|@all] 1 &#x3D; 准备, 0&#x3D;不准备</span><br><span class="line"></span><br><span class="line">举例:让所有人都准备</span><br><span class="line">sm_setready 1 @all</span><br><span class="line"></span><br><span class="line">举例:让某个用户准备,比如用户当前user id为 4 (4前面加一个#号)</span><br><span class="line">sm_setready 1 #4</span><br><span class="line"></span><br><span class="line">3,设置某人房主</span><br><span class="line">命令</span><br><span class="line">sm_setleader</span><br><span class="line">用法</span><br><span class="line">sm_setleader [#userid]</span><br><span class="line">sm_setleader #4</span><br><span class="line"></span><br><span class="line">举例: 将user id 为4的设置为管理员</span><br><span class="line">sm_setleader #4</span><br><span class="line"></span><br><span class="line">4,踢人</span><br><span class="line">命令 sm_kick</span><br><span class="line">用法</span><br><span class="line">sm_kick [#userid]</span><br><span class="line"></span><br><span class="line">举例: 将uesrid 为4的用户踢掉.</span><br><span class="line">sm_kick #4</span><br></pre></td></tr></table></figure><p>原文作者: Y.A.K.E<br>原文链接: <a href="https://www.yge.me/public/addons/yakeblog/detail/show/id/21.html" target="_blank" rel="noopener external nofollow noreferrer">https://www.yge.me/public/addons/yakeblog/detail/show/id/21.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ASRD </tag>
+            
+            <tag> 游戏服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于一个小白github建blog的故事</title>
+      <link href="/posts/7d46.html"/>
+      <url>/posts/7d46.html</url>
+      
+        <content type="html"><![CDATA[<p>作为一个小白，想建一个博客来帮助自己学习。把学习的过程以及感悟记录下来：</p><blockquote><ul><li>github账号一只</li><li>域名一只（如果你觉得不重要可以忽略，域名可以尝试很多东西）</li><li>小白一只</li><li>hexo模板一只（当然你拥有更好的，另当别论）</li></ul></blockquote><p>由于图床还没搞定所以暂时莫有图片。七牛需要实名，实名在学校实现不了。</p><h3 id="创建github账号及新项目"><a href="#创建github账号及新项目" class="headerlink" title="创建github账号及新项目"></a>创建github账号及新项目</h3><blockquote><p>创建账号啥的不用我多讲了吧。唯一要注意的是，就是创建项目</p></blockquote><hr><h2 id="创建项目要注意，项目名字就是你的github的名字"><a href="#创建项目要注意，项目名字就是你的github的名字" class="headerlink" title="创建项目要注意，项目名字就是你的github的名字"></a>创建项目要注意，项目名字就是你的github的名字</h2><p><strong>uesrname.github.io</strong><br>uesr就是你的github账号</p><hr><h2 id="小白的文章，大神勿喷"><a href="#小白的文章，大神勿喷" class="headerlink" title="小白的文章，大神勿喷"></a>小白的文章，大神勿喷</h2><h3 id="开始前的准备。"><a href="#开始前的准备。" class="headerlink" title="开始前的准备。"></a>开始前的准备。</h3><p>这是安装hexo前的准备。</p><h3 id="1-安装gitbash"><a href="#1-安装gitbash" class="headerlink" title="1. 安装gitbash"></a>1. 安装gitbash</h3><p>大神们说要装gitbash，其实吧，我觉得git for windows的也可以的。但bash怎么说呢，看到命令行我就有种亲切的感觉。。。都可以去官网下载，</p><h3 id="2-安装完成后续操作"><a href="#2-安装完成后续操作" class="headerlink" title="2. 安装完成后续操作"></a>2. 安装完成后续操作</h3><p>安装nodejs</p><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener external nofollow noreferrer">nodejs</a>下载地址<br>傻瓜式安装。<br>检查是否安装完成在bash里输入 ：git version</p><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h3><blockquote><ul><li>先创建一个文件夹。用来放blog的文件</li><li>安装hexo命令：npm i -g hexo</li><li>安装成功查看版本 hexo -v</li></ul></blockquote><p>接着cd进你的目录。cd e:(进入E盘)cd blog（进入blog文件夹）<br>接着就要初始化了<br>hexo init</p><h3 id="4-配置ssh"><a href="#4-配置ssh" class="headerlink" title="4. 配置ssh"></a>4. 配置ssh</h3><p>在配置ssh前，需要输入俩条命令</p><blockquote><ul><li>git config –global user.name “name”</li><li>git config –global user.eamil “emali”<br>name和email随便添加</li></ul></blockquote><blockquote><ul><li>创建ssh 在bash中输入 ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" rel="external nofollow noreferrer">youremail@example.com</a> 生成ssh。</li></ul></blockquote><p>然后你需要照到ssh生成的pub文件。<br>输入cd ~/.ssh<br>在输入cat id_rsa.pub<br>然后把ssh-rsa后面那一段复制下来</p><p>粘贴到github上去。在项目的setting里面deploy keys。添加，title随便填，为了方便记忆我填了学校毕竟是学校的电脑</p><h3 id="5-修改主要文件"><a href="#5-修改主要文件" class="headerlink" title="5. 修改主要文件"></a>5. 修改主要文件</h3><blockquote><ul><li>修改config.yml文件</li></ul></blockquote><p>附上config.yml<a href="https://blog.csdn.net/xuezhisdc/article/details/53130383" target="_blank" rel="noopener external nofollow noreferrer">文件详解</a></p><p>到bash中执行以下命令</p><blockquote><ul><li>hexo c</li><li>hexo g</li><li>hexo s</li></ul></blockquote><p>据说hexo3.0还需要单独安装服务器。命令是</p><blockquote><ul><li>npm i hexo-sever</li></ul></blockquote><p> 接着你打开浏览器输入<a href="http://localhost:4000" target="_blank" rel="noopener external nofollow noreferrer">http://localhost:4000</a> 就会看见你的blog了</p><h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><p> <strong>安装</strong> npm install hexo-deployer-git –save<br> <strong>命令</strong>：</p><blockquote><ul><li>hexo c</li><li>hexo g</li><li>hexo deploy</li></ul></blockquote><p><strong>请注意最后一步可能要输入你的用户名和密码</strong><br>然后访问你的blog吧 <a href="http://yourgithubname.github.io" target="_blank" rel="noopener external nofollow noreferrer">http://yourgithubname.github.io</a><br>yourgithubname改为你的github账号</p><h3 id="7-绑定域名"><a href="#7-绑定域名" class="headerlink" title="7. 绑定域名"></a>7. 绑定域名</h3><p>这一步我弄了好久，还找过大神。</p><blockquote><ul><li>首先你需要一个域名（建议狗爹去买，国外嘛，不用备案）</li></ul></blockquote><p>注册dnspod。需要实名。<br>然后去看dnspod的狗爹教程，添加好后有延迟。</p><p>然后去控制台添加域名之后的解析选项注意</p><blockquote><ul><li>主机记录@  记录类型A线路类型 默认  记录值（请自行ping name.github.io）<br>这是第一条<br>第二条主机记录改为wwww<br>记录类型改为CNAME<br>记录值为 name.github.io</li></ul></blockquote><h3 id="8-发布文章"><a href="#8-发布文章" class="headerlink" title="8. 发布文章"></a>8. 发布文章</h3><p>在 <strong>bash</strong> 中输入</p><blockquote><ul><li>hexo new ‘文章名字’</li></ul></blockquote><p>就可以在</p><blockquote><ul><li>source/_posts</li></ul></blockquote><p>中看见你创建文章啦<br>文章编辑需要markdown<br><img src= "/img/loading.gif" data-lazy-src="https://www.zybuluo.com/static/img/logo.png" alt="cmd-markdown-logo"><br>我使用的是在线编辑你也可以去下个编辑器啥的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

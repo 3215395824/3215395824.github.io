@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VB笔记(完结) | impdx-剑</title><meta name="keywords" content="VB,高职考"><meta name="author" content="忧郁的派大星-剑"><meta name="copyright" content="忧郁的派大星-剑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="VB笔记（高职考）1.elseif的坑2019.9.17 elseif只适用于块语句 Basic1234567891011If Check1(0).Value &#x3D; 1 ThenText1.FontBold &#x3D; TrueElseIf Check1(0).Value &#x3D; 0 ThenText1.FontBold &#x3D; FalseElseIf Check1(1).V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VB笔记(完结)">
+<meta property="og:url" content="https://www.impdx.vip/posts/e642.html">
+<meta property="og:site_name" content="impdx-剑">
+<meta property="og:description" content="VB笔记（高职考）1.elseif的坑2019.9.17 elseif只适用于块语句 Basic1234567891011If Check1(0).Value &#x3D; 1 ThenText1.FontBold &#x3D; TrueElseIf Check1(0).Value &#x3D; 0 ThenText1.FontBold &#x3D; FalseElseIf Check1(1).V">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2019-09-17T13:36:04.000Z">
+<meta property="article:modified_time" content="2021-05-03T03:01:30.150Z">
+<meta property="article:author" content="忧郁的派大星-剑">
+<meta property="article:tag" content="VB">
+<meta property="article:tag" content="高职考">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/imgs/favicon.png"><link rel="canonical" href="https://www.impdx.vip/posts/e642.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="http://data.zz.baidu.com/urls?site=www.impdx.vip&amp;token=d6Wl9dgjtu99hhYO"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#fff"/><link rel="apple-touch-icon" sizes="180x180" href="/imgs/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/imgs/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/imgs/pwa/16.png"/><link rel="mask-icon" href="/imgs/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?56e144199c27f8917b84914b8569062e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":360,"position":"top","messagePrev":"It has been","messageNext":"文章内容过于久远可能与现在实际情况不符，仅供参考。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-05-03 11:01:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/3215395824/hexo-css@v0.0.1/footer.css"><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="impdx-剑" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/imgs/avatar.png" onerror="onerror=null;src='/imgs/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VB笔记（高职考）"><span class="toc-number">1.</span> <span class="toc-text">VB笔记（高职考）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-elseif的坑"><span class="toc-number">1.1.</span> <span class="toc-text">1.elseif的坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-case的语法"><span class="toc-number">1.2.</span> <span class="toc-text">2.case的语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么index。"><span class="toc-number">1.3.</span> <span class="toc-text">什么index。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#考纲2部分与3部分预览（word文件在文章尾部）"><span class="toc-number">2.</span> <span class="toc-text">考纲2部分与3部分预览（word文件在文章尾部）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于技能考的一些心得"><span class="toc-number">3.</span> <span class="toc-text">关于技能考的一些心得</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">impdx-剑</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">VB笔记(完结)</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-09-17T13:36:04.000Z" title="发表于 2019-09-17 21:36:04">2019-09-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-03T03:01:30.150Z" title="更新于 2021-05-03 11:01:30">2021-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">753</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="VB笔记（高职考）"><a href="#VB笔记（高职考）" class="headerlink" title="VB笔记（高职考）"></a>VB笔记（高职考）</h1><h2 id="1-elseif的坑"><a href="#1-elseif的坑" class="headerlink" title="1.elseif的坑"></a>1.elseif的坑</h2><p>2019.9.17</p>
+<p>elseif只适用于块语句</p>
+<figure class="highlight plain"><figcaption><span>Basic</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">If Check1(0).Value &#x3D; 1 Then</span><br><span class="line">Text1.FontBold &#x3D; True</span><br><span class="line"></span><br><span class="line">ElseIf Check1(0).Value &#x3D; 0 Then</span><br><span class="line">Text1.FontBold &#x3D; False</span><br><span class="line"></span><br><span class="line">ElseIf Check1(1).Value &#x3D; 1 Then</span><br><span class="line">Text1.FontBold &#x3D; True</span><br><span class="line"></span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+<p>这样是可行的那如果是这样</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">If</span> Check1(<span class="number">0</span>).Value = <span class="number">1</span> ThenText1.FontBold = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ElseIf</span> Check1(<span class="number">0</span>).Value = <span class="number">0</span> ThenText1.FontBold = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ElseIf</span> Check1(<span class="number">1</span>).Value = <span class="number">1</span> ThenText1.FontBold = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>就会报错为<strong><em>else没有if</em></strong>，因为语句结构不是块语句，属于行语句。而elseif只适用于块语句。</p>
+<p>其实我认为这个elseif这个规则很不错，适合的换行可以极大的提升代码可阅读性</p>
+<h2 id="2-case的语法"><a href="#2-case的语法" class="headerlink" title="2.case的语法"></a>2.case的语法</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">Case</span> Option1(Index).Value = <span class="literal">True</span>   这行是很重要的。定义了条件。注意<span class="keyword">case</span>语句只能用于一个变量。</span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">0</span>                            当index值为<span class="number">0</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为红色"</span></span><br><span class="line">Text1.ForeColor = vbRed</span><br><span class="line"></span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">1</span>                            当index值为<span class="number">1</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为蓝色"</span></span><br><span class="line">Text1.ForeColor = vbBlue</span><br><span class="line"></span><br><span class="line"><span class="keyword">Case</span> Index = <span class="number">2</span>                            当index值为<span class="number">2</span>时，则执行下一行，否则跳过</span><br><span class="line">Text1.<span class="keyword">Text</span> = <span class="string">"显示为绿色"</span></span><br><span class="line">Text1.ForeColor = vbGreen</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Select</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">特点：只能适用于一个变量</span><br><span class="line">如果你的条件同时要满足 index的值，value的属性。那么<span class="keyword">case</span>不适合这个事件。</span><br><span class="line"></span><br><span class="line">这就像你又要吃得饱，又想吃得少。也不是没有办法，压缩饼干。</span><br><span class="line"></span><br><span class="line">如果你非要使用<span class="keyword">case</span>那么可以从整个模块考虑，增加一个函数。方法很多。</span><br></pre></td></tr></table></figure>
+<h2 id="什么index。"><a href="#什么index。" class="headerlink" title="什么index。"></a>什么index。</h2><p>如果你使用控件数组，index的值就像ID一样，一个复选框对应值一个ID(index)</p>
+<p>是来区分控件的。它是唯一的。就像你的身份证号码一样。</p>
+<p>而名称和caption就像你的名字和绰号一样。caption属性是显示在控件上的，是看得见的</p>
+<p>名称就是你创建的控件的名字。就和我们的名字差不多。一般不会重叠，在运行中他看不见，开发界面可以看见。你可以更改。<strong><em>同一控件数组需要同一名称。</em></strong></p>
+<p>caption属性就像同学给你取得绰号一样。比如我可以叫张三，你也可以叫张三。</p>
+<h1 id="考纲2部分与3部分预览（word文件在文章尾部）"><a href="#考纲2部分与3部分预览（word文件在文章尾部）" class="headerlink" title="考纲2部分与3部分预览（word文件在文章尾部）"></a>考纲2部分与3部分预览（word文件在文章尾部）</h1><p><img src= "/img/loading.gif" data-lazy-src="https://files.alexhchu.com/2020/02/11/2b71f80c79d5a.png" alt="考纲2and3_1_13.png"></p>
+<h1 id="关于技能考的一些心得"><a href="#关于技能考的一些心得" class="headerlink" title="关于技能考的一些心得"></a>关于技能考的一些心得</h1><ul>
+<li>VB技能很简单，如果你不看答案会做出模拟卷或者题库的题目(东博题库做第一遍建议不看答案自己想)，完全不必担心</li>
+<li>注意保存（有时候目录不一定准，看到的试题一可能是数媒的）！！！生成exe文件！！！</li>
+<li>读代码的时候不要卡在一个模块里，去全局性的看</li>
+<li>你会发现难度比你所做的任何一套题目都简单</li>
+<li>平时练习，一定要认真</li>
+<li>2019考点我整理过了，可能不完整。</li>
+<li>大部分填空上下文都有提示。</li>
+</ul>
+<p>附上 word链接</p>
+<p>链接：<a href="https://pan.baidu.com/s/16ZrBjJjhfdYEG397GRgPIQ" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/16ZrBjJjhfdYEG397GRgPIQ</a></p>
+<p>提取码：a6h0</p>
+<p>失效了在评论区dd，也可以联系我，点<a href="https://www.impdx.vip/about/">这里</a>。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">忧郁的派大星-剑</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.impdx.vip/posts/e642.html">https://www.impdx.vip/posts/e642.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.impdx.vip" target="_blank">impdx-剑</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/VB/">VB</a><a class="post-meta__tags" href="/tags/%E9%AB%98%E8%81%8C%E8%80%83/">高职考</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/imgs/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/imgs/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/imgs/alipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/imgs/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/edba.html"><img class="prev-cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png" onerror="onerror=null;src='/imgs/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">高职技能考（数媒+VB）2019 心得</div></div></a></div><div class="next-post pull-right"><a href="/posts/bd8a.html"><img class="next-cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png" onerror="onerror=null;src='/imgs/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">高三复习计划</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/bd8a.html" title="高三复习计划"><img class="cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-02</div><div class="title">高三复习计划</div></div></a></div><div><a href="/posts/edba.html" title="高职技能考（数媒+VB）2019 心得"><img class="cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-22</div><div class="title">高职技能考（数媒+VB）2019 心得</div></div></a></div><div><a href="/posts/4cf3.html" title="高职考计算题笔记汇总"><img class="cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-20</div><div class="title">高职考计算题笔记汇总</div></div></a></div><div><a href="/posts/354b.html" title="2020高职提前招生分析（计算机类）"><img class="cover" data-lazy-src="https://files.alexhchu.com/2020/03/25/5626048a38bf4.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-13</div><div class="title">2020高职提前招生分析（计算机类）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 忧郁的派大星-剑</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener external nofollow noreferrer">Butterfly</a></div><div class="footer_custom_text"><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://files.alexhchu.com/2020/06/11/4720138de5936.png"align="absmiddle" width="66px" height="31px" /></a><span>提供加速服务</span>|<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer"><img class="icp-icon" src="/imgs/icp.png"><span>浙ICP备20020615号</span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener external nofollow noreferrer" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'CUpMVMmHzkXskaU1visamAMY-MdYXbMMI',
+      appKey: 'M9U4GB2yOP4Tq2wlfy7nY9PL',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/otherjs/music.js"></script><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label> ✨ 网站已更新最新版本，请点击刷新 👉 </label> <a href="javascript:void(0)" rel="external nofollow noreferrer" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
